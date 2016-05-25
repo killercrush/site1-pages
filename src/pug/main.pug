@@ -1,5 +1,5 @@
 - var pageTitle = "Интернет магазин детских машин \"Бибика\"";
-- var menuItems = ["Бренды", "О нас", "Статьи", "Наши клиенты", "Доставка и оплата", "Гарантия и возврат", "Акции", "Контакты"];
+- var menuItems = ["Каталог", "Бренды", "О нас", "Статьи", "Наши клиенты", "Доставка и оплата", "Гарантия и возврат", "Акции", "Контакты"];
 doctype html
 html(lang="ru")
   head
@@ -15,6 +15,29 @@ html(lang="ru")
             li.menu__item
               a.menu__link(href="#")= item
             | &nbsp
-      .header__container1
-      .header__container2
-      .header__container3
+      .header__container
+        .header__block1
+          a.header__logo-link(href="/")
+            img.header__logo(src="images/logo.png")
+            br
+            br
+            | интернет-магазин детских машин
+          br
+          br
+          a(href="https://vk.com")
+            img.header__logo(src="images/vk.png")
+          | &nbsp&nbsp&nbsp
+          a(href="https://instagram.com")
+            img.header__logo(src="images/instagram.png")            
+        .header__block2
+          a.header__phone-link(href="tel:+79876543210") +7987 654 32 10
+          select
+            option Ваш регион
+          br
+          span.header__schedule 8:00-23:00 ежедневно
+          br
+          input(type="search" placeholder="Поиск по сайту") 
+        .header__block3
+          .header__cart-head Корзина
+          .header__cart-body Ваша корзина пуста
+          button.header__callback Заказать обратный звонок

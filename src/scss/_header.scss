@@ -1,13 +1,14 @@
 .menu__container {
-	background-color: $main_blue;
+	background-color: $main-blue;
 	width: 100%;
+	height: 45px;
 }
 .menu {
 	list-style: none;
-	max-width: 1148px;
+	max-width: $container-width;
 	width: 100%;
 	margin: 0 auto;
-    padding: 0;
+    padding: 12px 0;
     text-align: justify;
 }
 .menu:after {
@@ -16,12 +17,95 @@
 	display: inline-block;
 }
 .menu__item {
-	display: inline-block;	
+	display: inline-block;
 }
 .menu__link {
 	color: white;
 	text-decoration: none;
+	font-family: $main-font;
+	font-size: 16px;
+	font-weight: bold;
 }
-.menu__link:hover {
+.menu__link:hover,
+.header__logo-link:hover,
+.header__phone-link:hover,
+.header__callback:hover {
 	text-decoration: underline;
+	cursor: pointer;
+}
+.header__container {
+	max-width: $container-width;
+	width: 100%;
+	margin: 0 auto;
+	padding: 30px 0 16px 0;
+}
+.header__block1 {
+	display: inline-block;
+	vertical-align: top;
+	width: 392px / $container-width * 100%;
+}
+.header__block2 {
+	display: inline-block;
+	vertical-align: top;
+	width: 490px / $container-width * 100%;
+}
+.header__block3 {
+	display: inline-block;
+	vertical-align: top;
+	width: 266px / $container-width * 100%;
+}
+.header__logo-link {
+	font-size: 12.64px;
+	font-family: $main-font;
+	font-weight: bold;
+	color: $grey;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.header__phone-link {
+	font-size: 24px;
+	color: $orange;
+	font-family: $main-font;
+	font-weight: bold;
+	text-decoration: none;
+}
+.header__schedule {
+	font-size: 16x;
+	color: $main-blue;
+	font-family: $main-font;
+	font-weight: bold;
+}
+.header__cart-head {
+	color: white;
+	font-size: 16x;
+	font-family: $main-font;
+	font-weight: bold;
+	background-color: $main-red;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 11px 8px;
+}
+.header__cart-body {
+	font-size: 16x;
+	font-family: $main-font;
+	font-weight: bold;
+	border: 1px solid $main-red;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	width: 100%;
+	color: $light-grey;
+	box-sizing: border-box;
+	padding: 11px 8px;
+}
+.header__callback {
+	color: white;
+	background-color: $btn-green;
+	font-family: $main-font;
+	font-weight: bold;
+	border-radius: 5px;
+	box-sizing: border-box;
+	border: none;
+	padding: 11px 8px;
 }
