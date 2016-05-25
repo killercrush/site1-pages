@@ -1,10 +1,20 @@
 - var pageTitle = "Интернет магазин детских машин \"Бибика\"";
+- var menuItems = ["Бренды", "О нас", "Статьи", "Наши клиенты", "Доставка и оплата", "Гарантия и возврат", "Акции", "Контакты"];
 doctype html
-html(lang="en")
+html(lang="ru")
   head
+    meta(charset="utf8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(href="css/style.min.css", rel="stylesheet")
     title= pageTitle
   body
     header.header
+      nav.menu__container
+        ul.menu
+          each item in menuItems
+            li.menu__item
+              a.menu__link(href="#")= item
+            | &nbsp
       .header__container1
       .header__container2
       .header__container3

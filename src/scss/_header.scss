@@ -1,0 +1,27 @@
+.menu__container {
+	background-color: $main_blue;
+	width: 100%;
+}
+.menu {
+	list-style: none;
+	max-width: 1148px;
+	width: 100%;
+	margin: 0 auto;
+    padding: 0;
+    text-align: justify;
+}
+.menu:after {
+	content: '';
+	width: 100%;
+	display: inline-block;
+}
+.menu__item {
+	display: inline-block;	
+}
+.menu__link {
+	color: white;
+	text-decoration: none;
+}
+.menu__link:hover {
+	text-decoration: underline;
+}
