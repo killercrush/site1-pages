@@ -1,5 +1,6 @@
 - var pageTitle = "Интернет магазин детских машин \"Бибика\"";
 - var menuItems = ["Каталог", "Бренды", "О нас", "Статьи", "Наши клиенты", "Доставка и оплата", "Гарантия и возврат", "Акции", "Контакты"];
+- var catalogItems =  ["Электромобили", "Мотоциклы", "Квадрациклы", "Толокары", "Веломобили", "Квадроциклы на бензине", "Детские машины на бензине", "Аккумуляторы, зарядки"];
 doctype html
 html(lang="ru")
   head
@@ -31,13 +32,30 @@ html(lang="ru")
             img.header__logo(src="images/instagram.png")            
         .header__block2
           a.header__phone-link(href="tel:+79876543210") +7987 654 32 10
-          select
-            option Ваш регион
+          select.header__select-region
+            option(value="" default selected) Ваш регион
+            option Республика Башкортостан
+            option Московская область
+            option Калининградская область
           br
+          br  
           span.header__schedule 8:00-23:00 ежедневно
-          br
-          input(type="search" placeholder="Поиск по сайту") 
+          .search__container
+            input.search__input(type="search" placeholder="Поиск по сайту")
+            button.search__btn
         .header__block3
           .header__cart-head Корзина
           .header__cart-body Ваша корзина пуста
           button.header__callback Заказать обратный звонок
+      nav.menu-catalog
+        .menu-catalog__container
+          mixin item(name)
+            .menu-catalog__item= name
+              ul.menu-catalog__dropdown-container
+                each item in catalogItems
+                  li.menu-catalog__dropdown-item
+                    a.menu-catalog__dropdown-link(href="#")= item
+          +item("Машинки")
+          +item("Детские коляски")
+          +item("Автокресла")
+          +item("Велосипеды")
