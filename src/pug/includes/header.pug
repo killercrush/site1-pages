@@ -1,0 +1,50 @@
+header.header
+  nav.menu__container
+    ul.menu
+      each item in menuItems
+        li.menu__item
+          a.menu__link(href="#")= item
+        | &nbsp;
+  .header__container
+    .header__block1
+      a.header__logo-link(href="/")
+        img.header__logo(src="images/logo.png")
+        br
+        br
+        | интернет-магазин детских машин
+      br
+      br
+      a(href="https://vk.com")
+        img.header__logo(src="images/vk.png")
+      | &nbsp;&nbsp;&nbsp;
+      a(href="https://instagram.com")
+        img.header__logo(src="images/instagram.png")            
+    .header__block2
+      a.header__phone-link(href="tel:+79876543210") +7987 654 32 10
+      select.header__select-region
+        option(value="" default selected) Ваш регион
+        option Республика Башкортостан
+        option Московская область
+        option Калининградская область
+      br
+      br  
+      span.header__schedule 8:00-23:00 ежедневно
+      .search__container
+        input.search__input(type="search" placeholder="Поиск по сайту")
+        button.search__btn
+    .header__block3
+      .header__cart-head Корзина
+      .header__cart-body Ваша корзина пуста
+      button.header__callback Заказать обратный звонок
+  nav.menu-catalog
+    .menu-catalog__container
+      mixin item(name, items)
+        .menu-catalog__item= name
+          ul.menu-catalog__dropdown-container
+            each item in items
+              li.menu-catalog__dropdown-item
+                a.menu-catalog__dropdown-link(href="#")= item
+      +item("Машинки", catalogCars)
+      +item("Детские коляски", catalogBabyCars)
+      +item("Автокресла", catalogChairs)
+      +item("Велосипеды", catalogCycle)

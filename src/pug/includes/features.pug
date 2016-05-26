@@ -1,0 +1,9 @@
+.feature__container
+  mixin feature(name, img_src)
+    .feature
+      img.feature__icon(src=img_src)
+      span.feature__text= name
+  +feature("Только качественные товары", "")
+  +feature("Самые низкие цены", "")
+  +feature("Быстрая доставка", "")
+  +feature("Гарантия", "")

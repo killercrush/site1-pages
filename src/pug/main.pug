@@ -1,6 +1,9 @@
 - var pageTitle = "Интернет магазин детских машин \"Бибика\"";
 - var menuItems = ["Каталог", "Бренды", "О нас", "Статьи", "Наши клиенты", "Доставка и оплата", "Гарантия и возврат", "Акции", "Контакты"];
-- var catalogItems =  ["Электромобили", "Мотоциклы", "Квадрациклы", "Толокары", "Веломобили", "Квадроциклы на бензине", "Детские машины на бензине", "Аккумуляторы, зарядки"];
+- var catalogCars =  ["Электромобили", "Мотоциклы", "Квадрациклы", "Толокары", "Веломобили", "Квадроциклы на бензине", "Детские машины на бензине", "Аккумуляторы, зарядки"];
+- var catalogBabyCars = ["Детские коляски", "Люльки", "2в1", "3в1", "Прогулочные", "Трансформеры", "Трости" , "Для двойни", "Аксессуары"];
+- var catalogChairs = ["Автокресла","Автокресла группы 0+ (0-13кг)","Автокресла группы 0+/1 (0-18кг)","Автокресла группы 1 (9-18кг)","Автокресла группы 1/2 (9-25кг)","Автокресла группы 1/2/3 (9-36кг)","Автокресла группы 2/3 (15-36кг)","Автокресла группы 3 (бустеры)","Аксессуары для автокресел","Аксессуары для автомобиля"];
+- var catalogCycle = ["Беговелы", "Двухколесные", "Трехколесные"];
 doctype html
 html(lang="ru")
   head
@@ -9,53 +12,8 @@ html(lang="ru")
     link(href="css/style.min.css", rel="stylesheet")
     title= pageTitle
   body
-    header.header
-      nav.menu__container
-        ul.menu
-          each item in menuItems
-            li.menu__item
-              a.menu__link(href="#")= item
-            | &nbsp
-      .header__container
-        .header__block1
-          a.header__logo-link(href="/")
-            img.header__logo(src="images/logo.png")
-            br
-            br
-            | интернет-магазин детских машин
-          br
-          br
-          a(href="https://vk.com")
-            img.header__logo(src="images/vk.png")
-          | &nbsp&nbsp&nbsp
-          a(href="https://instagram.com")
-            img.header__logo(src="images/instagram.png")            
-        .header__block2
-          a.header__phone-link(href="tel:+79876543210") +7987 654 32 10
-          select.header__select-region
-            option(value="" default selected) Ваш регион
-            option Республика Башкортостан
-            option Московская область
-            option Калининградская область
-          br
-          br  
-          span.header__schedule 8:00-23:00 ежедневно
-          .search__container
-            input.search__input(type="search" placeholder="Поиск по сайту")
-            button.search__btn
-        .header__block3
-          .header__cart-head Корзина
-          .header__cart-body Ваша корзина пуста
-          button.header__callback Заказать обратный звонок
-      nav.menu-catalog
-        .menu-catalog__container
-          mixin item(name)
-            .menu-catalog__item= name
-              ul.menu-catalog__dropdown-container
-                each item in catalogItems
-                  li.menu-catalog__dropdown-item
-                    a.menu-catalog__dropdown-link(href="#")= item
-          +item("Машинки")
-          +item("Детские коляски")
-          +item("Автокресла")
-          +item("Велосипеды")
+    include ./includes/header.pug
+    .bg-girl
+    .divider
+    include ./includes/features.pug
+    include ./includes/footer.pug
