@@ -5,14 +5,19 @@
 }
 @import "_variables";
 
-@import "_normalize";
+@import "libs/_normalize";
+@import "libs/_owl.carousel";
 
 @import "_header";
+
+@import "_features";
 
 @import "_footer";
 
 html {
 	margin: 0;
+	font-family: $main-font;
+    font-weight: bold;
 }
 div {
 	box-sizing: border-box;

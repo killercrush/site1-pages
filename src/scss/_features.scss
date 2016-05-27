@@ -1,0 +1,15 @@
+.feature__container {
+    width: 100%;
+    max-width: $container-width;
+    height: 303px;
+    margin: 0 auto;
+}
+.feature {
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+}
+.feature__text {
+    font-size: 24px;
+    color: $main-blue;
+}

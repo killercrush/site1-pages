@@ -16,4 +16,31 @@ html(lang="ru")
     .bg-girl
     .divider
     include ./includes/features.pug
+    mixin carousel(name, color, bg_src)
+      .carousel__container
+        h3.carousel__name
+        .carousel.owl-carousel.owl-theme
+          mixin carousel_item(img_src)
+            .carousel-item.item
+              img(src="#{img_src}") 
+              =img_src
+              span.carousel-item__name Название товара Бренд Модель
+              span.carousel-item__categ Название группы товаров
+              span.carousel-item__price Цена
+              span.carousel-item__price-val 9999 руб.
+              button.carousel-item__buy Купить в один клик
+              button.carousel-item__to-cart В корзину
+          +carousel_item("images/product1.jpg")
+          +carousel_item("images/product1.jpg")
+          +carousel_item("images/product2.jpg")
+          +carousel_item("images/product2.jpg")
+          +carousel_item("images/product3.jpg")
+          +carousel_item("images/product3.jpg")
+    +carousel("Популярное", "", "")
+    +carousel("Новинки", "", "")
+    +carousel("Скидки", "", "")
+
+
+
     include ./includes/footer.pug
+    script(src="js/script.min.js")
