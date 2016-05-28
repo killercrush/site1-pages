@@ -5,6 +5,9 @@ var minify = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var spritesmith = require('gulp.spritesmith');
+var imagemin = require('gulp-imagemin');
+
 gulp.task('sass', function () {
   return gulp.src('./src/scss/main.scss')
     .pipe(sass().on('error', sass.logError))
@@ -34,3 +37,20 @@ gulp.task('owl', function () {
 // gulp.task('sass:watch', function () {
 //   gulp.watch('./sass/**/*.scss', ['sass']);
 // });
+
+gulp.task('sprites', function () {
+  var spriteData = gulp.src('./src/images/icons/*.png').pipe(spritesmith({
+    imgName: 'sprites.png',
+    cssName: '_sprites.scss',
+    imgPath: '../images/sprites.png' 
+  }));
+
+    spriteData.img.pipe(gulp.dest('./src/images/')); // путь, куда сохраняем картинку
+    spriteData.css.pipe(gulp.dest('./src/scss/')); // путь, куда сохраняем стили
+});
+
+gulp.task('images', function () {
+	gulp.src(['./src/images/*.png', './src/images/*.jpg'])
+		.pipe(imagemin())
+		.pipe(gulp.dest('dist/images'))
+});

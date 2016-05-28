@@ -3,13 +3,33 @@
     max-width: $container-width;
     height: 303px;
     margin: 0 auto;
+    padding-top: 50px;
+    position: relative;
+    background-color: white;
 }
 .feature {
     display: inline-block;
     width: 25%;
-    text-align: center;
+    text-align: center;    
+    vertical-align: top;
+}
+.icon-feature {
+	margin: 0 auto 36px;
 }
 .feature__text {
     font-size: 24px;
     color: $main-blue;
+    text-transform: uppercase;
+}
+.feature__container:after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 3px;
+    left: 34%;
+    height: 50px;
+    width: 34.4878%;
+    border-radius: 100%;
+    max-width: 350px;
+    box-shadow: 0 4px 28px rgba(90,90,90,0.6);
 }

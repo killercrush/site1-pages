@@ -65,6 +65,9 @@
     width: 266px / $container-width * 100%;
     box-sizing: border-box;
 }
+.header__logo {
+    margin-bottom: 10px;
+}
 .header__logo-link {
     font-size: 12.64px;
     font-family: $main-font;
@@ -72,6 +75,12 @@
     color: $grey;
     text-decoration: none;
     text-transform: uppercase;
+    margin-bottom: 19px;
+    display: inline-block;
+}
+.header__icon {
+    display: inline-block;
+    vertical-align: middle;
 }
 .header__phone-link {
     font-size: 24px;
@@ -79,14 +88,19 @@
     font-family: $main-font;
     font-weight: bold;
     text-decoration: none;
+    margin-left: 8px;
+    vertical-align: middle;
 }
 .header__schedule {
-    font-size: 16x;
+    font-size: 16px;
     color: $main-blue;
     font-family: $main-font;
     font-weight: bold;
+    display: inline-block;
+    margin-top: 9px;
 }
-.header__select-region {
+.header__select-container {
+    position: relative;
     border: 1px solid $main-blue;
     outline: none;
     background-color: white;
@@ -94,12 +108,29 @@
     font-family: $main-font;
     font-weight: bold;
     color: $grey;
-    height: 32px;
     width: 151px;
     border-radius: 12px;
-    padding-left: 12px;
     float: right;
     margin-right: 32px / 490px * 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.header__select-region {
+    border: none;
+    outline: none;
+    background-color: white;
+    color: $grey;
+    width: 171px;
+    height: 32px;
+    padding-left: 12px;
+    cursor: pointer;
+}
+.header__select-arrow {
+    @include sprite($icon-arrow-down);
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    pointer-events: none;
 }
 .search__container {
     position: absolute;
@@ -135,6 +166,26 @@
     border-bottom-right-radius: 12px;
     vertical-align: middle;
 }
+.header__cart {
+    width: 100%;
+    color: $grey;
+    font-size: 16px;
+    padding-left: 20px;
+    >.icon-cart-red {
+        position: absolute;
+        left: 0;
+        top: 2px;
+    }
+}
+.header__cart-link {
+    color: #fa6868;
+}
+.header__cart-count {
+    color: $main-blue;
+}
+.header__cart-price {
+    color: #9cb913;
+}
 .header__cart-head {
     color: white;
     font-size: 16px;
@@ -147,6 +198,11 @@
     height: 32px;
     box-sizing: border-box;
     padding: 8px 0 0 38px;
+}
+.header__cart-head>.icon-cart {
+    position: absolute;
+    left: 15px;
+    top: 10px;
 }
 .header__cart-body {
     font-size: 16px;
@@ -173,6 +229,10 @@
     height: 32px;
     position: absolute;
     bottom: 0;
+    .icon-callback {
+        float: left;
+        margin-left: 4px;
+    }
 }
 .menu-catalog {
     background: url(../images/bg-header-menu-catalog.jpg);
@@ -197,11 +257,19 @@
     font-size: 18px;
     font-family: $main-font;
     font-weight: bold;
-    text-align: center;
     padding-top: 20px;
     border: 1px solid #bdbcbd;
     background: linear-gradient(to bottom, #ffffff 0%,#fdfdfd 60%,#ededed 98%,#dedede 100%);
     box-shadow: 0px 3px 5px 0px rgba(12, 6, 6, 0.35);
+    vertical-align: middle;
+
+    >.header__icon {
+        float: left;
+        margin: -10px 10px 0 20px;
+    }
+    >.icon-car {
+        margin-top: -7px;
+    }
 }
 .menu-catalog__item:last-of-type {
     margin-right: 0;
@@ -220,18 +288,19 @@
     top: 64px + 16px;
     margin: 0;
     border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;    
+    border-bottom-right-radius: 12px;
+    z-index: 1;  
 }
 .menu-catalog__item:hover>.menu-catalog__dropdown-container {
     display: block;
     cursor: pointer;
 }
 .menu-catalog__dropdown-item {
-	padding: 7px 0;
+    padding: 6px 0;
 }
 .menu-catalog__dropdown-link {
-	text-decoration: none;
-	color: white;
-	font-size: 16px;
-	margin-left: -6px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    margin-left: -6px;
 }

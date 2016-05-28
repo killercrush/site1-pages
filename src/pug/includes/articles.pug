@@ -1,0 +1,23 @@
+.articles-page
+  .articles-page__container
+    h2.articles-page__title Статьи
+    mixin article()
+      .article
+        img.article__thumb(src="images/article-thumb.jpg")
+        h3.article__title Заголовок статьи
+        p.article__text.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        button.article__btn Подробно
+    +article()
+    +article()
+    +article()
+    ul.pagination
+      mixin page-link(n, curr)
+        li
+          - var className = curr ? "pagination-link pagination-link--current" : "pagination-link"
+          a(href="#" class=className)= n
+      +page-link("<<", true)
+      +page-link("1", true)
+      +page-link("2", false)
+      +page-link("3", false)
+      +page-link(">>", false)

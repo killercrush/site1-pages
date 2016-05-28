@@ -1,9 +1,9 @@
 .feature__container
-  mixin feature(name, img_src)
+  mixin feature(name, icon)
     .feature
-      img.feature__icon(src=img_src)
-      span.feature__text= name
-  +feature("Только качественные товары", "")
-  +feature("Самые низкие цены", "")
-  +feature("Быстрая доставка", "")
-  +feature("Гарантия", "")
+      != icon
+      span.feature__text!= name
+  +feature("Только <br/> качественные <br/>товары", "<div class=\"icon-thumb icon-feature\"></div>")
+  +feature("Самые <br/>низкие цены", "<div class=\"icon-pig icon-feature\"></div>")
+  +feature("Быстрая <br/> доставка", "<div class=\"icon-box icon-feature\"></div>")
+  +feature("Гарантия", "<div class=\"icon-medal icon-feature\"></div>")

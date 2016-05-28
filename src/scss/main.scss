@@ -5,12 +5,23 @@
 }
 @import "_variables";
 
+@import "_sprites";
+@include sprites($spritesheet-sprites);
+
 @import "libs/_normalize";
 @import "libs/_owl.carousel";
 
 @import "_header";
 
 @import "_features";
+
+@import "_description";
+
+@import "_about";
+
+@import "_articles";
+
+@import "_brands";
 
 @import "_footer";
 
@@ -49,19 +60,19 @@ div {
     padding: 2px 15px;
 }
 .carousel__container--blue {
-    background-color: $main-blue;
+    background: url(../images/pattern-blue.jpg);
     .carousel__name {
         background-color: #0d99bc;
     }
 }
 .carousel__container--red {
-    background-color: $main-red;
+    background: url(../images/pattern-red.jpg);
     .carousel__name {
         background-color: #a84e4e;
     }
 }
 .carousel__container--green {
-    background-color: $btn-green;
+    background: url(../images/pattern-green.jpg);
     .carousel__name {
         background-color: #7ea237
     }
@@ -126,4 +137,63 @@ div {
     height: 32px;
     box-sizing: border-box;
     float: right;
+}
+.carousel-item__sale-badge {
+	@include sprite($icon-sale);
+	position: absolute;
+    top: 4px;
+    right: 16px;
+}
+.owl-next {
+    position: absolute;
+    right: - 64px - 22px;
+    top: 50%;
+    color: transparent;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: white;
+    
+}
+.owl-next:before {
+	content: "";
+	display: block;
+    margin: 16px auto 0;
+	@include sprite($icon-next);
+}
+.owl-prev {
+    position: absolute;
+    left: - 64px - 22px;
+    top: 50%;
+    color: transparent;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: white;
+}
+.owl-prev:before {
+	content: "";
+	display: block;
+    margin: 16px auto 0;
+	@include sprite($icon-prev);
+}
+.inner-page {
+	width: 100%;
+	height: 705px;
+	background: url(../images/pattern-green.jpg);
+}
+.inner-page__container {
+	width: 100%;
+	max-width: $container-width + 2 * 17px;
+	padding: 24px 17px 0;
+	margin: 0 auto;
+	height: 683px;
+	background-color: white;
+	text-align: center;
+}
+.inner-page__title {
+	font-size: 24px;
+	color: #f25b5b;
+	margin: 0 0 13px;
+	text-align: left;
 }

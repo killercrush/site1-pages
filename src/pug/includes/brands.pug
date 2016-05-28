@@ -1,0 +1,13 @@
+.inner-page
+  .inner-page__container
+    h2.inner-page__title Бренды
+    .brands-container
+      mixin brand()
+        .brand-block
+          img.brand-block__picture(src="http://placehold.it/167x167")
+          | Название
+          br
+          | бренда
+        | &nbsp;
+      - for(var i = 0; i < 12; i++)
+        +brand()

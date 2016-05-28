@@ -10,41 +10,61 @@ header.header
       a.header__logo-link(href="/")
         img.header__logo(src="images/logo.png")
         br
-        br
         | интернет-магазин детских машин
       br
-      br
       a(href="https://vk.com")
-        img.header__logo(src="images/vk.png")
+        .icon-vk.header__icon
       | &nbsp;&nbsp;&nbsp;
       a(href="https://instagram.com")
-        img.header__logo(src="images/instagram.png")            
+        .icon-instagram.header__icon
     .header__block2
+      .icon-call.header__icon
       a.header__phone-link(href="tel:+79876543210") +7987 654 32 10
-      select.header__select-region
-        option(value="" default selected) Ваш регион
-        option Республика Башкортостан
-        option Московская область
-        option Калининградская область
+
+      .header__select-container
+        select.header__select-region
+          option(value="" default selected) Ваш регион
+          option Республика Башкортостан
+          option Московская область
+          option Калининградская область
+        .header__select-arrow
       br
-      br  
       span.header__schedule 8:00-23:00 ежедневно
       .search__container
         input.search__input(type="search" placeholder="Поиск по сайту")
         button.search__btn
+          .icon-loupe.header__icon
     .header__block3
-      .header__cart-head Корзина
-      .header__cart-body Ваша корзина пуста
-      button.header__callback Заказать обратный звонок
+      if cart_with_items
+        .header__cart
+          .icon-cart-red.header__icon
+          | В 
+          a.header__cart-link(href="#") корзине 
+          span.header__cart-count 3 товара
+          br
+          | на сумму
+          |  
+          span.header__cart-price 12 тысяч руб
+      else
+        .header__cart-head 
+          .icon-cart.header__icon
+          | Корзина
+        .header__cart-body Ваша корзина пуста
+      button.header__callback 
+        .icon-callback.header__icon
+        | Заказать обратный звонок
   nav.menu-catalog
     .menu-catalog__container
-      mixin item(name, items)
-        .menu-catalog__item= name
+      mixin item(name, icon, items)
+        .menu-catalog__item
+          != icon
+          | &nbsp;
+          = name
           ul.menu-catalog__dropdown-container
             each item in items
               li.menu-catalog__dropdown-item
                 a.menu-catalog__dropdown-link(href="#")= item
-      +item("Машинки", catalogCars)
-      +item("Детские коляски", catalogBabyCars)
-      +item("Автокресла", catalogChairs)
-      +item("Велосипеды", catalogCycle)
+      +item("Машинки", "<div class=\"icon-car header__icon\"></div>", catalogCars)
+      +item("Детские коляски", "<div class=\"icon-pram header__icon\"></div>",catalogBabyCars)
+      +item("Автокресла", "<div class=\"icon-chair header__icon\"></div>",catalogChairs)
+      +item("Велосипеды", "<div class=\"icon-cycle header__icon\"></div>",catalogCycle)

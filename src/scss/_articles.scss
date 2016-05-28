@@ -1,0 +1,79 @@
+.articles-page {
+	width: 100%;
+	height: 705px;
+	background: url(../images/pattern-green.jpg);
+}
+.articles-page__container {
+	width: 100%;
+	max-width: $container-width + 2 * 17px;
+	padding: 24px 17px 0;
+	margin: 0 auto;
+	height: 683px;
+	background-color: white;
+	text-align: center;
+}
+.articles-page__title {
+	font-size: 24px;
+	color: #f25b5b;
+	margin: 0 0 13px;
+	text-align: left;
+}
+
+.article {
+	border-bottom: 2px solid #dcdcdc;
+	position: relative;
+    padding-top: 26px;
+    height: 173px;
+    text-align: left;
+}
+.article__thumb {
+    float: left;
+    margin-right: 20px;
+}
+.article__title {
+	font-size: 18px;
+	color: $main-blue;
+	margin-top: 0;
+    margin-bottom: 3px;
+}
+.article__text {
+	font-size: 16px;
+	color: $grey;
+	margin-top: 0;
+}
+.article__btn {
+	color: white;
+    background-color: $btn-green;
+    border-radius: 12px;
+    box-sizing: border-box;
+    border: none;
+    width: 120px;
+    height: 32px;
+    position: absolute;
+    bottom: 24px;
+    right: 0;
+}
+.pagination {
+	background-color: $btn-blue;
+	margin: 32px 0 0;
+	padding: 7px 20px;
+	list-style: none;
+	border-radius: 12px;
+	display: inline-block;
+	>li {
+		display: inline-block;
+		width: 26px;
+	}
+}
+.pagination-link {
+	color: white;
+	font-size: 14px;
+} 
+.pagination-link--current {
+	text-decoration: none;
+}
+.about__picture {
+	float: right;
+	width: 266px / $container-width * 100%;
+	max-width: 266px;
+}

@@ -3,6 +3,7 @@
     max-width: $container-width;
     margin: 0 auto;
     text-align: justify;
+    padding-top: 37px;
 }
 .footer:after {
     content: '';
@@ -17,6 +18,9 @@
     font-weight: bold;
     font-size: 14px;
     // width: $container-width / 6 / $container-width * 100%;
+}
+.footer__icon {
+    display: inline-block;
 }
 .footer__logo {
     width: 112px;

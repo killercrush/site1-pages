@@ -12,40 +12,8 @@ html(lang="ru")
     link(href="css/style.min.css", rel="stylesheet")
     title= pageTitle
   body
+    - var cart_with_items = true
     include ./includes/header.pug
-    .bg-girl
-    .divider
-    include ./includes/features.pug
-    mixin carousel(name, color, bg_src, sale_badge)
-      - var className = "carousel__container carousel__container--" + color;
-      div(class=className)
-        h3.carousel__name= name
-        .carousel.owl-carousel.owl-theme
-          mixin carousel_item(img_src, sale_badge)
-            .carousel-item.item
-              img.carousel-item__thumb(src="http://placehold.it/255x255") 
-              span.carousel-item__name Название товара Бренд Модель
-              br
-              span.carousel-item__categ Название группы товаров
-              br
-              span.carousel-item__price Цена:&nbsp;
-              span.carousel-item__price-val 9999 руб.
-              br
-              button.carousel-item__buy Купить в один клик
-              button.carousel-item__to-cart В корзину
-              if ( sale_badge ) 
-                .carousel-item__sale-badge
-          +carousel_item("images/product1.jpg", sale_badge)
-          +carousel_item("images/product1.jpg", sale_badge)
-          +carousel_item("images/product2.jpg", sale_badge)
-          +carousel_item("images/product2.jpg", sale_badge)
-          +carousel_item("images/product3.jpg", sale_badge)
-          +carousel_item("images/product3.jpg", sale_badge)
-    +carousel("Популярное", "blue", "", false)
-    +carousel("Новинки", "green", "", true)
-    +carousel("Скидки", "red", "", true)
-
-
-    include ./includes/description.pug
+    include ./includes/articles.pug
     include ./includes/footer.pug
     script(src="js/script.min.js")
