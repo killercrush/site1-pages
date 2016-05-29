@@ -23,6 +23,10 @@
 
 @import "_brands";
 
+@import "_cart";
+
+@import "_catalog";
+
 @import "_footer";
 
 html {
@@ -179,17 +183,18 @@ div {
 }
 .inner-page {
 	width: 100%;
-	height: 705px;
+	min-height: 705px;
 	background: url(../images/pattern-green.jpg);
+	padding-bottom: 25px;
 }
 .inner-page__container {
 	width: 100%;
 	max-width: $container-width + 2 * 17px;
 	padding: 24px 17px 0;
 	margin: 0 auto;
-	height: 683px;
+	min-height: 683px;
 	background-color: white;
-	text-align: center;
+	// text-align: center;
 }
 .inner-page__title {
 	font-size: 24px;

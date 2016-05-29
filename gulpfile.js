@@ -21,7 +21,7 @@ gulp.task('sass', function () {
 gulp.task('pug', function buildHTML() {
   return gulp.src('./src/pug/*.pug')
   .pipe(pug({
-    // Your options in here. 
+    pretty: true
   }))
   .pipe(gulp.dest('./dist'));
 });

@@ -1,0 +1,48 @@
+.inner-page
+  .inner-page__container
+    h2.inner-page__title Корзина
+    table.cart
+      tr
+        th Фото
+        th Наименование
+        th Цена
+        th Кол-во
+        th Сумма руб.
+      mixin row()
+        tr
+          td
+            img(src="images/product4.jpg")
+          td.cart__product-name Длинное название модели
+          td 9999
+          td
+            span.cart__count 1
+          td 9999
+          td
+            button.cart__btn-remove
+              .icon-trash
+      +row()
+      +row()
+    .in-total
+      span.in-total__text Итого
+      span.in-total__val 19 998 руб.
+    form.order
+      h4.order__title Оформить заказ
+      input(type="text" placeholder="ФИО")
+      input(type="email" placeholder="Email")
+      input(type="tel" placeholder="Телефон")
+      textarea(placeholder="Комментарий к заказу")
+      input(type="submit" value="Оформить заказ")
+    .information
+      h4.information__title Информация
+      p.information__text.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+      p.information__text.
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+      a(href="#").information__link
+        .icon-medal-red
+        | Гарантия
+      a(href="#").information__link
+        .icon-box-red
+        | Доставка и оплата
+
+

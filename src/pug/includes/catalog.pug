@@ -1,0 +1,94 @@
+.inner-page
+  .inner-page__container
+    .filter
+      input.filter__search-input(type="search" placeholder="Поиск по товарам")
+      button.filter__search-btn
+        .icon-loupe      
+      mixin cb(id, text)
+        input(type="checkbox" name=id value=id id=id).filter-checkbox__input
+        label(for=id).filter-checkbox__label= text
+        br
+      +cb("cb1", "Машинки")
+      +cb("cb2", "Детские коляски")
+      +cb("cb3", "Автокресла")
+      +cb("cb4", "Велосипеды")
+      mixin select(text)
+       .select__container
+        select.select__select
+          option(value="" default selected)= text
+          option Один 
+          option Два
+          option Три
+        .select__arrow
+      +select("Выберите группу")
+      +select("Бренд")
+      mixin fs_input(name)
+        fieldset.filter-range
+          legend.filter-range__title= name
+          input(type="number" placeholder="От").filter-range__input
+          | 
+          | -
+          | 
+          input(type="number" placeholder="До").filter-range__input
+      +fs_input("Цена:")
+      +fs_input("Возраст:")
+      mixin fs_switch(name, type, v1, v2, id)
+        - var className = "filter-" + type;
+        fieldset(class=className)
+          legend(class=className+"__title")= name
+          input(class=className+"__input" id=id+"_1" type=type name=id)
+          label(class=className+"__label" for=id+"_1")= v1
+          br
+          input(class=className+"__input" id=id+"_2" type=type name=id)
+          label(class=className+"__label" for=id+"_2")= v2
+          br
+      +fs_switch("Пульт ДУ", "radio", "Да", "Нет", "sw1")
+      +fs_switch("Кузов", "radio", "Седан", "Джип", "sw2")
+      +fs_switch("Музыка", "checkbox", "USB", "MP3", "sw3")
+      +fs_switch("Кому", "checkbox", "Для мальчика", "Для девочки", "sw4")
+    .catalog
+      .catalog__header
+        h2.inner-page__title Название раздела
+        | Сортировка:
+        +select("По популярности")
+      mixin catalog_item(img_src, sale_badge, id)
+        div(id="item_"+id).catalog-item.item
+          .catalog-item__thumb(style="background-image: url(images/"+img_src+")")
+          .color-selector
+            -  var f = ""
+            .color-selector__thumb.color-selector__thumb--selected(style="background-image: url(images/"+img_src+")" onclick!="changeColor.bind(this)("+id+");")
+            .color-selector__thumb(style="background-image: url(images/y_"+img_src+")" onclick!="changeColor.bind(this)("+id+");")
+            .color-selector__thumb(style="background-image: url(images/b_"+img_src+")" onclick!="changeColor.bind(this)("+id+");")
+          .catalog-item__stars
+            .icon-star
+            .icon-star
+            .icon-star
+            .icon-star
+            .icon-star-empty
+          span.catalog-item__name Название товара Бренд Модель
+          br
+          span.catalog-item__categ Название группы товаров
+          br
+          span.catalog-item__price Цена:&nbsp;
+          span.catalog-item__price-val 9999 руб.
+          br
+          button.catalog-item__buy Купить в один клик
+          button.catalog-item__to-cart
+            .icon-cart-big
+
+        | &nbsp;
+      each val in [0, 1, 2, 3, 4]
+        +catalog_item("product1.jpg", sale_badge, val * 3)
+        +catalog_item("product2.jpg", sale_badge, val * 3 + 1)
+        +catalog_item("product3.jpg", sale_badge, val * 3 + 2)
+      .catalog__pagination-container
+        ul.pagination
+          mixin page-link(n, curr)
+            li
+              - var className = curr ? "pagination-link pagination-link--current" : "pagination-link"
+              a(href="#" class=className)= n
+          +page-link("<<", true)
+          +page-link("1", true)
+          +page-link("2", false)
+          +page-link("3", false)
+          +page-link(">>", false)
