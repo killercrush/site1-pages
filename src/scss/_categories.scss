@@ -1,0 +1,40 @@
+.categories-container {
+    text-align: left;
+    padding-bottom: 6px;
+}
+.category {
+    width: 266px / $container-width * 100%;
+    margin-right: ($container-width - 266px * 4) / 3 / $container-width  * 100%;
+    display: inline-block;
+    color: $main-blue;
+    font-size: 18px;
+    margin-top: 37px;
+    vertical-align: top;
+}
+.category:nth-of-type(4n) {
+    margin-right: 0;
+}
+.category__thumb {
+    height: 174px;
+    width: 100%;
+    padding-top: 29px;
+    background: url(../images/pattern-red.jpg);
+    >div {
+        margin: 0 auto;
+    }
+}
+.category__name {
+    padding: 14px 14px 0;
+    display: inline-block;
+    text-align: left;
+}
+.inner-page--categories {
+     .icon-car {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+    } 
+    .inner-page__title {
+        margin-bottom: -17px;
+    }
+}

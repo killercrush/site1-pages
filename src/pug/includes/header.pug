@@ -55,8 +55,9 @@ header.header
         | Заказать обратный звонок
   nav.menu-catalog
     .menu-catalog__container
-      mixin item(name, icon, items)
-        .menu-catalog__item
+      mixin item(name, icon, items, is_sel)
+        - var className = is_sel ? "menu-catalog__item menu-catalog__item--selected" : "menu-catalog__item";
+        div(class=className)
           != icon
           | &nbsp;
           = name
@@ -64,7 +65,7 @@ header.header
             each item in items
               li.menu-catalog__dropdown-item
                 a.menu-catalog__dropdown-link(href="#")= item
-      +item("Машинки", "<div class=\"icon-car header__icon\"></div>", catalogCars)
+      +item("Машинки", "<div class=\"icon-car header__icon\"></div>", catalogCars, isSelected)
       +item("Детские коляски", "<div class=\"icon-pram header__icon\"></div>",catalogBabyCars)
       +item("Автокресла", "<div class=\"icon-chair header__icon\"></div>",catalogChairs)
       +item("Велосипеды", "<div class=\"icon-cycle header__icon\"></div>",catalogCycle)

@@ -1,0 +1,15 @@
+- var categories_icons = ["elec-car", "bike", "atv", "tol-car", "cycle-car", "atv-gasoline", "kid-car-gasoline", "battery"];
+.inner-page.inner-page--categories
+  .inner-page__container
+    h2.inner-page__title 
+      .icon-car
+      | Машинки
+    .categories-container
+      mixin categ(name, icon)
+        .category
+          .category__thumb
+            div(class="icon-" + icon)
+          span.category__name
+            = name
+      each i in [0, 1, 2, 3, 4, 5, 6, 7]
+        +categ(catalogCars[i], categories_icons[i])

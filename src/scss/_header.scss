@@ -271,6 +271,9 @@
         margin-top: -7px;
     }
 }
+.menu-catalog__item--selected {
+    background: linear-gradient(to bottom, #cdebf2 0%,#ceeff7 60%,#c3e4ec 98%,#c1dfe6 100%);
+}
 .menu-catalog__item:last-of-type {
     margin-right: 0;
 }

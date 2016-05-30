@@ -27,6 +27,8 @@
 
 @import "_catalog";
 
+@import "_categories";
+
 @import "_footer";
 
 html {
@@ -183,7 +185,6 @@ div {
 }
 .inner-page {
 	width: 100%;
-	min-height: 705px;
 	background: url(../images/pattern-green.jpg);
 	padding-bottom: 25px;
 }
@@ -192,9 +193,7 @@ div {
 	max-width: $container-width + 2 * 17px;
 	padding: 24px 17px 0;
 	margin: 0 auto;
-	min-height: 683px;
 	background-color: white;
-	// text-align: center;
 }
 .inner-page__title {
 	font-size: 24px;
