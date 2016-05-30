@@ -47,10 +47,26 @@
       +fs_switch("Музыка", "checkbox", "USB", "MP3", "sw3")
       +fs_switch("Кому", "checkbox", "Для мальчика", "Для девочки", "sw4")
     .catalog
-      .catalog__header
-        h2.inner-page__title Название раздела
-        | Сортировка:
-        +select("По популярности")
+      if with_brand
+        .catalog-header
+          .catalog-header__brand-logo
+            img(src="http://placehold.it/167x167")
+          .catalog-header__text-container
+            h2.inner-page__title Название бренда
+            .catalog-header__brand-desc
+              p.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+              p.
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi  
+        .catalog-header__select-container
+          | Сортировка: &nbsp;
+          +select("По популярности")
+      else
+        .catalog__header
+          h2.inner-page__title Название раздела
+        .catalog-header__select-container
+          | Сортировка: &nbsp;
+          +select("По популярности")        
       mixin catalog_item(img_src, sale_badge, id)
         div(id="item_"+id).catalog-item.item
           .catalog-item__thumb(style="background-image: url(images/"+img_src+")")
