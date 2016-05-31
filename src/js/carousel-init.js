@@ -13,11 +13,14 @@ $('.owl-carousel').owlCarousel({
 });
 
 function changeColor(id) {
-  console.log($("#item_"+id+" .color-selector__thumb--selected"));
   $("#item_"+id+" .color-selector__thumb--selected").removeClass("color-selector__thumb--selected");
-  console.log($("#item_"+id+" .color-selector__thumb--selected"));
-  console.log(this);
   $(this).addClass("color-selector__thumb--selected");
-  console.log(this);
   document.querySelector("#item_" + id + " .catalog-item__thumb").style.backgroundImage=this.style.backgroundImage;
+}
+
+function changeTab(id) {
+  $(this).addClass("tabs__control--active");
+  $(this).siblings().removeClass("tabs__control--active"); 
+  $(".tabs__panel").hide(); 
+  $("#" + id).fadeIn();
 }
