@@ -1,74 +1,102 @@
-.page-product
-  .page-product__preview-container
-    .preview
-      .preview__frame
-        img(src="images/product2.jpg")
-      .preview__thumb-group
-        img(src="images/product2.jpg").preview__thumb.preview__thumb--selected
+.product
+  .product__container
+    .product__preview-container
+      .preview
+        .preview__frame
+          img(src="images/product2.jpg")#view
+        .preview__thumb-group
+          img(src="images/product2.jpg" onclick="changeView.bind(this)();").preview__thumb.preview__thumb--selected
+          img(src="images/y_product2.jpg" onclick="changeView.bind(this)();").preview__thumb
+          img(src="images/b_product2.jpg" onclick="changeView.bind(this)();").preview__thumb
+          img(src="images/product2.jpg" onclick="changeView.bind(this)();").preview__thumb
+    .product__info-container
+      .info-desc
+        .info-desc__left-block
+          h4.info-desc__product-name Длинное название модели
+          span.info-desc-price Цена:
+          span.info-desc-val 9999 руб.
+        .info-desc__right-block
+          a(href="#").info-desc__link Название группы товаров          
+          | Бренд
+          br
+          br
+          | Модель
+      .button-group
+        button.button-group__buy Купить
         |  &nbsp;
-        img(src="images/y_product2.jpg").preview__thumb
+        a(href="tel:+70000000000").button-group__call +7 (000) 000 00 00
         |  &nbsp;
-        img(src="images/b_product2.jpg").preview__thumb
-        |  &nbsp;
-        img(src="images/product2.jpg").preview__thumb
-  .page-product__info-container
-    .info-desc
-      .info-desc__left-block
-        h4.info-desc__product-name
-        span.info-desc-price Цена:
-        span.info-desc-va 9999 руб.
-      .info-desc__right-block
-        a(href="#").info-desc__product-group-link
-        | Бренд
+        button.button-group__buy-one-click Купить в один клик
+      .info-extra
+        .info-extra__left-block
+          .info-extra__colors
+            .color-black
+            .color-red
+            .color-yellow
+          .info-extra__stars
+              .icon-star
+              .icon-star
+              .icon-star
+              .icon-star
+              .icon-star-empty
+          a(href="#").info-extra__link
+            .icon-medal-red
+            | Гарантия
+          br
+          br
+          a(href="#").info-extra__link
+            .icon-box-red
+            | Доставка и оплата
+        .info-extra__right-block
+          img(src="images/girl-video.jpg")
+    .product__tabs-container
+      .tabs
+        button.tabs__control.tabs__control--active(onclick="changeTab.bind(this, \"tab1\")();") Описание
+        button.tabs__control(onclick="changeTab.bind(this, \"tab2\")();") Характеристики
+        button.tabs__control(onclick="changeTab.bind(this, \"tab3\")();") Отзывы
+        button.tabs__control(onclick="changeTab.bind(this, \"tab4\")();") О бренде
+        mixin panel(id, vis)
+          - var style = vis ? "display: block" : "display: none";
+            div(style=style id=id).tabs__panel
+              p.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+              p.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+        +panel("tab1", true)
+        +panel("tab2")
+        +panel("tab3")
+        +panel("tab4")
+.rel-product
+  .rel-product__container
+    .rel-product__header
+      h3 С этим товаром покупают
+    mixin catalog_item(img_src, sale_badge, id)
+      div(id="item_"+id).catalog-item.item
+        .catalog-item__thumb(style="background-image: url(images/"+img_src+")")
+        .color-selector
+          -  var f = ""
+          .color-selector__thumb.color-selector__thumb--selected(style="background-image: url(images/"+img_src+")" onclick!="changeColor.bind(this)("+id+");")
+          .color-selector__thumb(style="background-image: url(images/y_"+img_src+")" onclick!="changeColor.bind(this)("+id+");")
+          .color-selector__thumb(style="background-image: url(images/b_"+img_src+")" onclick!="changeColor.bind(this)("+id+");")
+        .catalog-item__stars
+          .icon-star
+          .icon-star
+          .icon-star
+          .icon-star
+          .icon-star-empty
+        span.catalog-item__name Название товара Бренд Модель
         br
-        | Модель
-    .button-group
-      button.button-group__buy Купить
-      a(tel="+70000000000").button-group__call +7 (000) 000 00 00
-      button.button-group__buy-one-click Купить в один клик
-    .info-extra
-      .info-extra__left-block
-        .info-extra__colors
-          .color-black
-          .color-red
-          .color-yellow
-        .info-extra__stars
-            .icon-star
-            .icon-star
-            .icon-star
-            .icon-star
-            .icon-star-empty
-        a(href="#").info-extra__link
-          .icon-medal-red
-          | Гарантия
-        a(href="#").info-extra__link
-          .icon-box-red
-          | Доставка и оплата
-      .info-extra__right-block
-        video(loop autoplay src="http://media.blizzard.com/wow/legion-6a153ad2/videos/header-illidan.webm")
-  .page-product__tabs-container
-    .tabs
-      .tabs__control.tabs__control--active(onclick="changeTab.bind(this, \"tab1\")();") Описание
-      .tabs__control.tabs__control--active(onclick="changeTab.bind(this, \"tab2\")();") Характеристики
-      .tabs__control.tabs__control--active(onclick="changeTab.bind(this, \"tab3\")();") Отзывы
-      .tabs__control.tabs__control--active(onclick="changeTab.bind(this, \"tab4\")();") О бренде
-      div(style="display: block").tabs__panel#tab1
-        p.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        p.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-      .tabs__panel#tab2
-        p.
-          22222222222222222, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        p.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-      .tabs__panel#tab3
-        p.
-          333333333333333333onsectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        p.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-      .tabs__panel#tab4
-        p.
-          44444444444444t, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        p.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+        span.catalog-item__categ Название группы товаров
+        br
+        span.catalog-item__price Цена:&nbsp;
+        span.catalog-item__price-val 9999 руб.
+        br
+        button.catalog-item__buy Купить в один клик
+        button.catalog-item__to-cart
+          .icon-cart-big
+
+      | &nbsp;
+    +catalog_item("product1.jpg", sale_badge, 1)
+    +catalog_item("product2.jpg", sale_badge, 2)
+    +catalog_item("product3.jpg", sale_badge, 3)
+    +catalog_item("product1.jpg", sale_badge, 4)
