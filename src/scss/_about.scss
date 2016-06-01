@@ -1,15 +1,19 @@
 .about {
 	width: 100%;
-	height: 705px;
 	background: url(../images/pattern-green.jpg);
+	padding-bottom: 25px;
 }
 .about__container {
 	width: 100%;
 	max-width: $container-width + 2 * 17px;
 	padding: 24px 17px 0;
 	margin: 0 auto;
-	height: 683px;
 	background-color: white;
+}
+.about__container::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 .about__title {
 	font-size: 24px;

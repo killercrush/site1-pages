@@ -4,6 +4,13 @@
     margin: 0 auto;
     text-align: justify;
     padding-top: 37px;
+    @include breakpoint(mobile) {
+        
+    }
+    @include breakpoint(tablet) {
+        padding: 20px;
+        text-align: center;
+    }
 }
 .footer:after {
     content: '';
@@ -17,7 +24,29 @@
     font-family: $main-font;
     font-weight: bold;
     font-size: 14px;
+    @include breakpoint(tablet) {
+        width: 32%;
+    }
+    @include breakpoint(mobile) {
+        width: 24%;
+    }
     // width: $container-width / 6 / $container-width * 100%;
+}
+.footer__column:nth-of-type(1) {
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+}
+.footer__column:nth-of-type(2) {
+    .footer__list {
+        @include breakpoint(mobile) {
+            display: block;
+        }
+    }
+    @include breakpoint(mobile) {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
 .footer__icon {
     display: inline-block;
@@ -38,6 +67,9 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    @include breakpoint(mobile) {
+        display: none;
+    }
 }
 .footer__list-link {
     color: $main-blue;
