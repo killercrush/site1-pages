@@ -1,0 +1,25 @@
+.promotions-container {
+    padding: 35px 0 64px;
+}
+.promotion {
+    width: 267px / $container-width * 100%;
+    margin-right: ($container-width - 267px * 4) / 3 / $container-width * 100%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: justify;
+}
+.promotion:nth-of-type(4n) {
+    margin-right: 0;
+}
+.promotion__thumb {
+    width: 100%;
+}
+.promotion__title {
+    color: $main-blue;
+    font-size: 18px;
+    margin: 1em 0;
+}
+.promotion__text {
+    color: $grey;
+    font-size: 14px;
+}

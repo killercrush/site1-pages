@@ -294,8 +294,7 @@
     border-bottom-right-radius: 12px;
     z-index: 1;  
 }
-.menu-catalog__item:hover>.menu-catalog__dropdown-container {
-    display: block;
+.menu-catalog__item:hover {
     cursor: pointer;
 }
 .menu-catalog__dropdown-item {
@@ -306,4 +305,7 @@
     color: white;
     font-size: 16px;
     margin-left: -6px;
+}
+.menu-catalog__dropdown-link:hover {
+    text-decoration: underline;
 }

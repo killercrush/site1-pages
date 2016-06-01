@@ -31,6 +31,8 @@
 
 @import "_product";
 
+@import "_promotions";
+
 @import "_footer";
 
 html {
@@ -43,6 +45,15 @@ div {
 }
 button:hover {
 	cursor: pointer;
+}
+ @mixin breakpoint($point) {
+   @if $point == tablet {
+    @media (max-width: 768px) { @content ; }
+  }
+  @else if $point == mobile{
+     @media (max-width: 425px)  { @content ; }
+
+  }
 }
 .bg-girl {
     width: 100%;
