@@ -1,6 +1,9 @@
 header.header
   nav.menu__container
-    ul.menu
+    a(onclick="$(\"#menu\").slideToggle();").menu__toggle
+      | Меню 
+      span.hamburger
+    ul.menu#menu
       each item in menuItems
         li.menu__item
           a.menu__link(href="#")= item

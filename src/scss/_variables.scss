@@ -20,5 +20,11 @@ $container-width: 1148px;
     }
     @else if $point == mobile {
         @media (max-width: 425px) { @content ; }
-  }
+    }
+    @else if $point == smalldesc {
+        @media (max-width: 1180px) { @content ; }
+    }
+    @else if $point == laptop {
+        @media (max-width: 1378px) { @content ; }
+    }   
 }

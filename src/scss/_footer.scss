@@ -4,6 +4,9 @@
     margin: 0 auto;
     text-align: justify;
     padding-top: 37px;
+    @include breakpoint(smalldesc) {
+        padding: 37px 17px 0;
+    }
     @include breakpoint(mobile) {
         
     }

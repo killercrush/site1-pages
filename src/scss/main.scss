@@ -103,6 +103,7 @@ button:hover {
     text-align: left;
     padding: 6px 17px 0;
     box-sizing: border-box;
+    position: relative;
 }
 .carousel-item__thumb {
     max-width: 225px;
@@ -165,6 +166,10 @@ button:hover {
     height: 64px;
     border-radius: 50%;
     background-color: white;
+    @include breakpoint(laptop) {
+        position: static;
+        display: inline-block;
+    }
     
 }
 .owl-next:before {
@@ -182,6 +187,12 @@ button:hover {
     height: 64px;
     border-radius: 50%;
     background-color: white;
+    @include breakpoint(laptop) {
+        position: static;
+        display: inline-block;
+        margin-right: 100px;
+    	margin-top: 10px;
+    }
 }
 .owl-prev:before {
 	content: "";

@@ -1,11 +1,23 @@
+.header {
+    @include breakpoint(tablet) {
+        padding-top: 15px;
+    }
+}
 .menu__container {
     background-color: $main-blue;
     width: 100%;
     height: 45px;
+    box-sizing: border-box;
+    @include breakpoint(smalldesc) {
+        padding: 0 17px;
+    }
     @include breakpoint(tablet) {
-        // position: fixed;
-        // z-index: 99;
-        // height: initial;
+        padding: 0;
+        position: fixed;
+        z-index: 99;
+        height: initial;
+        top: 0;
+        left: 0;
     }
 }
 .menu {
@@ -16,8 +28,36 @@
     padding: 12px 0;
     text-align: justify;
     @include breakpoint(tablet) {
-        // padding-left: 20px;
+        padding-left: 20px;
+        display: none;
     }
+}
+.menu__toggle {
+    display: none;
+    @include breakpoint(tablet) {
+        padding: 10px 20px;
+        color: white;
+        display: block;
+        text-align: right;
+    }
+}
+.hamburger {
+    position: relative;
+    display: inline-block;
+    width: 1.25em;
+    height: 0.7em;
+    margin-left: 0.3em;
+    border-top: 0.2em solid #fff;
+    border-bottom: 0.2em solid #fff;
+    vertical-align: middle;
+}
+.hamburger:before {
+    content: "";
+    position: absolute;
+    top: 0.25em;
+    left: 0px;
+    width: 100%;
+    border-top: 0.2em solid #fff;
 }
 .menu:after {
     content: '';
@@ -26,6 +66,14 @@
 }
 .menu__item {
     display: inline-block;
+    @include breakpoint(tablet) {
+        display: block;
+    }
+}
+.menu__item:last-of-type {
+    @include breakpoint(tablet) {
+        margin-bottom: -20px;
+    }
 }
 .menu__link {
     color: white;
@@ -33,6 +81,9 @@
     font-family: $main-font;
     font-size: 16px;
     font-weight: bold;
+    @include breakpoint(smalldesc) {
+        font-size: 13px;
+    }
 }
 .menu__link:hover,
 .header__logo-link:hover,
@@ -49,8 +100,12 @@
     margin: 0 auto;
     padding: 30px 0 16px 0;
     height: 179px;
-    @include breakpoint(tablet) {
+    @include breakpoint(smalldesc) {
+        padding: 30px 17px 16px;
         height: initial;
+    }
+    @include breakpoint(tablet) {        
+        padding: 30px 0;
     }
 }
 .header__block1 {
@@ -59,10 +114,14 @@
     vertical-align: top;
     width: 392px / $container-width * 100%;
     box-sizing: border-box;
-    @include breakpoint(tablet) {
+    @include breakpoint(smalldesc) {
         display: block;
         width: 100%;
+        margin-bottom: 20px;
         text-align: center;
+    }
+    @include breakpoint(tablet) {
+        
     }
 }
 .header__block2 {
@@ -72,12 +131,16 @@
     vertical-align: top;
     width: 490px / $container-width * 100%;
     box-sizing: border-box;
+    @include breakpoint(smalldesc) {
+        width: 50%;
+        text-align: left;
+    }
     @include breakpoint(tablet) {
         display: block;
         width: 100%;
         padding: 0 32px / 490px * 100%;
         height: 110px;
-        margin-top: 20px;
+        text-align: top;
     }
     @include breakpoint(mobile) {
         height: initial;
@@ -95,6 +158,9 @@
     vertical-align: top;
     width: 266px / $container-width * 100%;
     box-sizing: border-box;
+    @include breakpoint(smalldesc) {
+        width: 50%;
+    }
     @include breakpoint(tablet) {
         display: block;
         width: 100%;
@@ -303,6 +369,10 @@
     width: 100%;
     max-width: $container-width;
     margin: 0 auto;
+    @include breakpoint(smalldesc) {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
     @include breakpoint(tablet) {
         height: initial;
         padding-bottom: 17.5px;
@@ -326,9 +396,13 @@
     background: linear-gradient(to bottom, #ffffff 0%,#fdfdfd 60%,#ededed 98%,#dedede 100%);
     box-shadow: 0px 3px 5px 0px rgba(12, 6, 6, 0.35);
     vertical-align: middle;
+    @include breakpoint(smalldesc) {
+        font-size: 13px;
+    }
     @include breakpoint(tablet) {
         width: 90%;
         margin: 0 0 10px;
+        font-size: 18px;
     }
 
     >.header__icon {
