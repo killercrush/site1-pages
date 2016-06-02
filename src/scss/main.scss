@@ -10,6 +10,8 @@
 
 @import "libs/_normalize";
 @import "libs/_owl.carousel";
+@import "libs/_owl.theme";
+@import "libs/_owl.transitions";
 
 @import "_header";
 
@@ -104,17 +106,30 @@ button:hover {
     padding: 6px 17px 0;
     box-sizing: border-box;
     position: relative;
+    margin: 0 auto;
+    @include breakpoint(smalldesc) {
+        width: 100%;
+        overflow: hidden;
+        // margin: 0 10px;
+    }
+    @include breakpoint(mobile) {
+        font-size: 15px;
+    }
 }
 .carousel-item__thumb {
     max-width: 225px;
     max-height: 225px;
     margin: 0 auto;
+    display: block;
 }
 .carousel-item__name {
     color: $main-blue;
     font-size: 18px;
     margin-top: 2px;
-    display: inline-block;    
+    display: inline-block;
+    @include breakpoint(mobile) {
+        font-size: 16px;
+    }
 }
 .carousel-item__categ {
     color: $grey;
@@ -140,6 +155,9 @@ button:hover {
     width: 190px;
     height: 32px;
     box-sizing: border-box;
+    @include breakpoint(smalldesc) {
+        width: 190px / 330px * 100%;
+    }
 }
 .carousel-item__to-cart {
     background-color: $btn-green;
@@ -150,12 +168,25 @@ button:hover {
     height: 32px;
     box-sizing: border-box;
     float: right;
+    @include breakpoint(smalldesc) {
+        width: 127px / 330px * 100%;
+    }
 }
 .carousel-item__sale-badge {
 	@include sprite($icon-sale);
 	position: absolute;
     top: 4px;
     right: 16px;
+}
+.owl-carousel .owl-item {
+    @include breakpoint(smalldesc) {
+        padding: 0 17px;
+    }
+}
+.owl-theme .owl-controls .owl-buttons div {
+    opacity: 1;
+    background-color: white;
+    border-radius: 50%;
 }
 .owl-next {
     position: absolute;
@@ -164,8 +195,8 @@ button:hover {
     color: transparent;
     width: 64px;
     height: 64px;
-    border-radius: 50%;
-    background-color: white;
+    
+    
     @include breakpoint(laptop) {
         position: static;
         display: inline-block;

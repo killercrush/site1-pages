@@ -1,20 +1,18 @@
-$('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:2
-        },
-        1180: {
-            items:3
-        }
-    }
+$(document).ready(function() {
+  $(".owl-carousel").owlCarousel({
+      loop: true,
+      nav: true,
+      center: true,
+      navigation: true,
+      navigationText: ["", ""],
+      pagination: false,
+      items: 3, 
+      itemsDesktop: [1000, 2], 
+      itemsDesktopSmall: false,
+      itemsTablet: false, 
+      itemsMobile: [650, 1]
+  });
 });
-
 function changeColor(id) {
   $("#item_"+id+" .color-selector__thumb--selected").removeClass("color-selector__thumb--selected");
   $(this).addClass("color-selector__thumb--selected");
