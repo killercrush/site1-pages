@@ -1,51 +1,57 @@
+mixin cb(id, text)
+  br
+  input(type="checkbox" name=id value=id id=id).filter-checkbox__input
+  label(for=id).filter-checkbox__label= text
+  
+mixin select(text)
+ .select__container
+  select.select__select
+    option(value="" default selected)= text
+    option Один 
+    option Два
+    option Три
+  .select__arrow
+mixin fs_input(name)
+  fieldset.filter-range
+    legend.filter-range__title= name
+    input(type="number" placeholder="От").filter-range__input
+    | 
+    | -
+    | 
+    input(type="number" placeholder="До").filter-range__input
+mixin fs_switch(name, type, v1, v2, id)
+  - var className = "filter-" + type;
+  fieldset(class=className)
+    legend(class=className+"__title")= name
+    input(class=className+"__input" id=id+"_1" type=type name=id)
+    label(class=className+"__label" for=id+"_1")= v1
+    br
+    input(class=className+"__input" id=id+"_2" type=type name=id)
+    label(class=className+"__label" for=id+"_2")= v2
+    br
+
 .inner-page
   .inner-page__container
     .filter
-      input.filter__search-input(type="search" placeholder="Поиск по товарам")
-      button.filter__search-btn
-        .icon-loupe      
-      mixin cb(id, text)
-        input(type="checkbox" name=id value=id id=id).filter-checkbox__input
-        label(for=id).filter-checkbox__label= text
-        br
-      +cb("cb1", "Машинки")
-      +cb("cb2", "Детские коляски")
-      +cb("cb3", "Автокресла")
-      +cb("cb4", "Велосипеды")
-      mixin select(text)
-       .select__container
-        select.select__select
-          option(value="" default selected)= text
-          option Один 
-          option Два
-          option Три
-        .select__arrow
-      +select("Выберите группу")
-      +select("Бренд")
-      mixin fs_input(name)
-        fieldset.filter-range
-          legend.filter-range__title= name
-          input(type="number" placeholder="От").filter-range__input
-          | 
-          | -
-          | 
-          input(type="number" placeholder="До").filter-range__input
-      +fs_input("Цена:")
-      +fs_input("Возраст:")
-      mixin fs_switch(name, type, v1, v2, id)
-        - var className = "filter-" + type;
-        fieldset(class=className)
-          legend(class=className+"__title")= name
-          input(class=className+"__input" id=id+"_1" type=type name=id)
-          label(class=className+"__label" for=id+"_1")= v1
-          br
-          input(class=className+"__input" id=id+"_2" type=type name=id)
-          label(class=className+"__label" for=id+"_2")= v2
-          br
-      +fs_switch("Пульт ДУ", "radio", "Да", "Нет", "sw1")
-      +fs_switch("Кузов", "radio", "Седан", "Джип", "sw2")
-      +fs_switch("Музыка", "checkbox", "USB", "MP3", "sw3")
-      +fs_switch("Кому", "checkbox", "Для мальчика", "Для девочки", "sw4")
+      .filter__block1
+        input.filter__search-input(type="search" placeholder="Поиск по товарам")
+        button.filter__search-btn
+          .icon-loupe      
+        +cb("cb1", "Машинки")
+        +cb("cb2", "Детские коляски")
+        +cb("cb3", "Автокресла")
+        +cb("cb4", "Велосипеды")
+      .filter__block2
+        +select("Выберите группу")
+        +select("Бренд")       
+        +fs_input("Цена:")
+        +fs_input("Возраст:")
+      .filter__block3
+        +fs_switch("Пульт ДУ", "radio", "Да", "Нет", "sw1")
+        +fs_switch("Кузов", "radio", "Седан", "Джип", "sw2")
+      .filter__block4
+        +fs_switch("Музыка", "checkbox", "USB", "MP3", "sw3")
+        +fs_switch("Кому", "checkbox", "Для мальчика", "Для девочки", "sw4")
     .catalog
       if with_brand
         .catalog-header

@@ -41,19 +41,26 @@
     td:before {
         @include breakpoint(tablet) {
             /* Now like a table header */
-            position: absolute;
+            // position: absolute;
+            display: block;
+            width: 100%;
+            height: 25px;
+            text-align: center;
+            color: #afafaf;
+            font-size: 18px;
             /* Top/left values mimic padding */
-            top: 6px;
-            left: 6px;
-            width: 25%;
-            padding-right: 10px; 
-            white-space: nowrap;
+            // top: 6px;
+            // left: 6px;
+            // width: 25%;
+            // padding-right: 10px; 
+            // white-space: nowrap;
         }
     }
     
     /*
     Label the data
     */
+
     td:nth-of-type(1):before { @include breakpoint(tablet) { content: "Фото"; } }
     td:nth-of-type(2):before { @include breakpoint(tablet) { content: "Наименование"; } }
     td:nth-of-type(3):before { @include breakpoint(tablet) { content: "Цена"; } }
@@ -67,38 +74,46 @@
         border-left: 1px solid #c2c2c2;
         padding-left: 21px;
         box-sizing: border-box;
+        @include breakpoint(tablet) { 
+            text-align: center;
+            border-left: none;
+            border-bottom: 1px solid #c2c2c2;
+        }
     }
     td:first-child {
         border: none;
         padding-right: 12px;
         padding-left: 11px;
+        @include breakpoint(tablet) { 
+            border-bottom: 1px solid #c2c2c2;
+        }
     }
     td:nth-child(1) {
         width: 178px / $container-width * 100%;
-        @include breakpoint(tablet) { width: 100%; padding: 0;}
+        @include breakpoint(tablet) { width: 100%; padding: 20px 0 5px;}
     }
     td:nth-child(2) {
         width: 294px / $container-width * 100%;        
         padding-right: 35px;
-        @include breakpoint(tablet) { width: 100%; padding: 0;}
+        @include breakpoint(tablet) { width: 100%; padding: 20px 0 5px;}
     }
     td:nth-child(3) {
         width: 197px / $container-width * 100%;
-        @include breakpoint(tablet) { width: 100%; padding: 0;}
+        @include breakpoint(tablet) { width: 100%; padding: 20px 0 5px;}
     }
     td:nth-child(4) {
         width: 193px / $container-width * 100%;
         padding-left: 12px;
-        @include breakpoint(tablet) { width: 100%; padding: 0;}
+        @include breakpoint(tablet) { width: 100%; padding: 20px 0 5px;}
     }
     td:nth-child(5) {
         width: 199px / $container-width * 100%;
-        @include breakpoint(tablet) { width: 100%; padding: 0;}
+        @include breakpoint(tablet) { width: 100%; padding: 20px 0 5px;}
     }
     td:nth-child(6) {
         padding-left: 35px;
         width: 87px / $container-width * 100%;
-        @include breakpoint(tablet) { width: 100%; padding: 0;}
+        @include breakpoint(tablet) { width: 100%; padding: 20px 0 5px;}
     }     
     thead>tr>th {
         padding-bottom: 11px;
@@ -145,6 +160,9 @@
     padding-top: 16px;
     padding-left: 12px;
     box-sizing: border-box;
+    @include breakpoint(tablet) { 
+        width: 214px / (214px + 264px) * 100%;
+    }
 }
 .in-total__val {
     text-align: left;
@@ -156,6 +174,9 @@
     vertical-align: middle;
     padding-top: 13px;
     box-sizing: border-box;
+    @include breakpoint(tablet) { 
+        width: 264px / (214px + 264px) * 100%;
+    }    
 }
 .order {
     width: 462px / $container-width * 100%;
@@ -163,6 +184,10 @@
     text-align: left;
     display: inline-block;
     vertical-align: top;
+    @include breakpoint(tablet) { 
+        width: 100%;
+    } 
+
     input, textarea {
         border: 1px solid $main-blue;
         color: $grey;
@@ -202,6 +227,11 @@
     padding-left: 208px / $container-width * 100%;
     display: inline-block;
     vertical-align: top;
+    margin-bottom: 46px;
+    @include breakpoint(tablet) { 
+        width: 100%;
+        padding-left: 0;
+    }     
 }
 .information__link {
     font-size: 18px;

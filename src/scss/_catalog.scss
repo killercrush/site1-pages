@@ -10,7 +10,52 @@
     color: #404040;
     font-size: 14px;
     border-radius: 12px;
+    @include breakpoint(smalldesc) {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
+.filter__block1,
+.filter__block2 {
+    @include breakpoint(smalldesc) {
+        width: 35%;
+        display: inline-block;
+        vertical-align: top;
+    }
+    @include breakpoint(tablet) {
+        width: 100%;
+    }
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+    .select__container {
+        @include breakpoint(smalldesc) {
+            display: block;
+        }    
+    }
+    .filter-range {
+        @include breakpoint(smalldesc) {
+            text-align: left;
+        }
+    }
+}
+
+.filter__block3,
+.filter__block4 {
+    @include breakpoint(smalldesc) {
+        width: 15%;
+        display: inline-block;
+        padding-left: 20px;
+        vertical-align: top;
+    }
+    @include breakpoint(tablet) {
+        width: 50%;
+    }
+    @include breakpoint(mobile) {
+        width: 100%;
+    }        
+}
+
 // .filter__divider {
 //     display: inline-block;
 //     height: 1px;
@@ -202,7 +247,11 @@
     vertical-align: top;
     text-align: justify;
     padding-left: 26px;
-
+    @include breakpoint(smalldesc) {
+        max-width: 100%;
+        text-align: center;
+        padding-left: 0;
+    }
 }
 .catalog__pagination-container {
     text-align: center;
@@ -267,6 +316,9 @@
     vertical-align: top;
     margin-bottom: 29px;
     position: relative;
+    @include breakpoint(smalldesc) {
+        margin: 0 10px 29px;
+    }    
 }
 .color-selector {
     position: absolute;
