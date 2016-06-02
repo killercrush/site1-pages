@@ -13,7 +13,14 @@ html(lang="ru")
     title= pageTitle
   body
     include ./includes/header.pug
-    .bg-girl
+    .owl-carousel.owl-theme#slider
+      .item
+        img(src="images/bg-girl.jpg")
+      .item    
+        img(src="images/bg-girl-2.jpg")
+      .item    
+        img(src="images/bg-girl-3.jpg")  
+    //.bg-girl
     .divider
     include ./includes/features.pug
     mixin carousel(name, color, bg_src, sale_badge)

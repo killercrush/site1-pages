@@ -54,6 +54,21 @@ button:hover {
     background: $main-blue url(../images/bg-girl.jpg) center no-repeat;
     background-size: cover;
 }
+#slider {
+    .owl-controls {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    .owl-controls .owl-page span {
+        background-color: white;
+    }
+    .item img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
 .divider {
     background: url(../images/bg-header-menu-catalog.jpg);
     width: 100%;
@@ -64,6 +79,58 @@ button:hover {
     height: 664px;
     text-align: center;
     padding-top: 57px;
+
+    .owl-carousel .owl-item {
+        @include breakpoint(smalldesc) {
+            padding: 0 17px;
+        }
+    }
+    .owl-theme .owl-controls .owl-buttons div {
+        opacity: 1;
+        background-color: white;
+        border-radius: 50%;
+    }
+    .owl-next {
+        position: absolute;
+        right: - 64px - 22px;
+        top: 50%;
+        color: transparent;
+        width: 64px;
+        height: 64px;        
+        
+        @include breakpoint(laptop) {
+            position: static;
+            display: inline-block;
+        }        
+    }
+    .owl-next:before {
+        content: "";
+        display: block;
+        margin: 16px auto 0;
+        @include sprite($icon-next);
+    }
+    .owl-prev {
+        position: absolute;
+        left: - 64px - 22px;
+        top: 50%;
+        color: transparent;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background-color: white;
+        @include breakpoint(laptop) {
+            position: static;
+            display: inline-block;
+            margin-right: 100px;
+            margin-top: 10px;
+        }
+    }
+    .owl-prev:before {
+        content: "";
+        display: block;
+        margin: 16px auto 0;
+        @include sprite($icon-prev);
+    }
 }
 .carousel__name {
     color: white;
@@ -177,59 +244,6 @@ button:hover {
 	position: absolute;
     top: 4px;
     right: 16px;
-}
-.owl-carousel .owl-item {
-    @include breakpoint(smalldesc) {
-        padding: 0 17px;
-    }
-}
-.owl-theme .owl-controls .owl-buttons div {
-    opacity: 1;
-    background-color: white;
-    border-radius: 50%;
-}
-.owl-next {
-    position: absolute;
-    right: - 64px - 22px;
-    top: 50%;
-    color: transparent;
-    width: 64px;
-    height: 64px;
-    
-    
-    @include breakpoint(laptop) {
-        position: static;
-        display: inline-block;
-    }
-    
-}
-.owl-next:before {
-	content: "";
-	display: block;
-    margin: 16px auto 0;
-	@include sprite($icon-next);
-}
-.owl-prev {
-    position: absolute;
-    left: - 64px - 22px;
-    top: 50%;
-    color: transparent;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background-color: white;
-    @include breakpoint(laptop) {
-        position: static;
-        display: inline-block;
-        margin-right: 100px;
-    	margin-top: 10px;
-    }
-}
-.owl-prev:before {
-	content: "";
-	display: block;
-    margin: 16px auto 0;
-	@include sprite($icon-prev);
 }
 .inner-page {
 	width: 100%;

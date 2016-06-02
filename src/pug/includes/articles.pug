@@ -1,6 +1,6 @@
-.articles-page
-  .articles-page__container
-    h2.articles-page__title Статьи
+.inner-page
+  .inner-page__container
+    h2.inner-page__title Статьи
     mixin article()
       .article
         img.article__thumb(src="images/article-thumb.jpg")
@@ -11,13 +11,14 @@
     +article()
     +article()
     +article()
-    ul.pagination
-      mixin page-link(n, curr)
-        li
-          - var className = curr ? "pagination-link pagination-link--current" : "pagination-link"
-          a(href="#" class=className)= n
-      +page-link("<<", true)
-      +page-link("1", true)
-      +page-link("2", false)
-      +page-link("3", false)
-      +page-link(">>", false)
+    .pagination__container
+      ul.pagination
+        mixin page-link(n, curr)
+          li
+            - var className = curr ? "pagination-link pagination-link--current" : "pagination-link"
+            a(href="#" class=className)= n
+        +page-link("<<", true)
+        +page-link("1", true)
+        +page-link("2", false)
+        +page-link("3", false)
+        +page-link(">>", false)

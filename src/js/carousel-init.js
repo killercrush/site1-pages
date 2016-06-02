@@ -1,5 +1,11 @@
 $(document).ready(function() {
-  $(".owl-carousel").owlCarousel({
+  $("#slider").owlCarousel({ 
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true
+  });
+
+  $(".carousel").owlCarousel({
       loop: true,
       nav: true,
       center: true,

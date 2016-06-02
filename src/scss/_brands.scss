@@ -11,12 +11,21 @@
 .brand-block {
     display: inline-block;
     width: 167px / $container-width * 100%;
-    font-size: 18px;
-    color: #656565;
     text-align: center;
     padding-bottom: 40px;
+    @include breakpoint(tablet) {
+         width: 167px * 2 / $container-width * 100%;
+    }
+    @include breakpoint(mobile) {
+         width: 167px * 3 / $container-width * 100%;
+    }    
 }
 .brand-block__picture {
     border-radius: 12px;
     width: 100%;
+}
+.brand-block__link {
+    font-size: 18px;
+    color: #656565;
+    text-decoration: none;
 }

@@ -291,6 +291,7 @@
     color: $grey;
     font-size: 16px;
     padding-left: 20px;
+    position: relative;
     >.icon-cart-red {
         position: absolute;
         left: 0;
@@ -400,7 +401,7 @@
         font-size: 13px;
     }
     @include breakpoint(tablet) {
-        width: 90%;
+        width: 97%;
         margin: 0 0 10px;
         font-size: 18px;
     }

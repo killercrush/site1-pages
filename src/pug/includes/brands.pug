@@ -4,10 +4,11 @@
     .brands-container
       mixin brand()
         .brand-block
-          img.brand-block__picture(src="http://placehold.it/167x167")
-          | Название
-          br
-          | бренда
+          a(href="#").brand-block__link
+            img.brand-block__picture(src="http://placehold.it/167x167")
+            | Название
+            br
+            | бренда
         | &nbsp;
       - for(var i = 0; i < 12; i++)
         +brand()

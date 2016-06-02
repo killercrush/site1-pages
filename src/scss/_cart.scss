@@ -5,6 +5,61 @@
     text-align: left;
     color: $btn-green;
     margin-top: 30px;
+    @include breakpoint(tablet) {
+        display: block; 
+    }
+    thead, tbody, th, td, tr { 
+        @include breakpoint(tablet) {
+            display: block;
+            width: 100%;
+            padding: 0;
+            margin: 10px 0;
+        }
+    }
+    
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr { 
+        @include breakpoint(tablet) {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+    }
+    
+    // tr { border: 1px solid #ccc; }
+    
+    td { 
+        /* Behave  like a "row" */
+        @include breakpoint(tablet) {
+            border: none;
+            border-bottom: 1px solid #eee; 
+            position: relative;
+            padding-left: 50%;
+        }
+    }
+    
+    td:before {
+        @include breakpoint(tablet) {
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 25%;
+            padding-right: 10px; 
+            white-space: nowrap;
+        }
+    }
+    
+    /*
+    Label the data
+    */
+    td:nth-of-type(1):before { @include breakpoint(tablet) { content: "Фото"; } }
+    td:nth-of-type(2):before { @include breakpoint(tablet) { content: "Наименование"; } }
+    td:nth-of-type(3):before { @include breakpoint(tablet) { content: "Цена"; } }
+    td:nth-of-type(4):before { @include breakpoint(tablet) { content: "Количество"; } }
+    td:nth-of-type(5):before { @include breakpoint(tablet) { content: "Сумма руб."; } }
+
     th {
         color: #afafaf;
     }
@@ -20,26 +75,32 @@
     }
     td:nth-child(1) {
         width: 178px / $container-width * 100%;
+        @include breakpoint(tablet) { width: 100%; padding: 0;}
     }
     td:nth-child(2) {
-        width: 294px / $container-width * 100%;
+        width: 294px / $container-width * 100%;        
         padding-right: 35px;
+        @include breakpoint(tablet) { width: 100%; padding: 0;}
     }
     td:nth-child(3) {
         width: 197px / $container-width * 100%;
+        @include breakpoint(tablet) { width: 100%; padding: 0;}
     }
     td:nth-child(4) {
         width: 193px / $container-width * 100%;
         padding-left: 12px;
+        @include breakpoint(tablet) { width: 100%; padding: 0;}
     }
     td:nth-child(5) {
         width: 199px / $container-width * 100%;
+        @include breakpoint(tablet) { width: 100%; padding: 0;}
     }
     td:nth-child(6) {
         padding-left: 35px;
         width: 87px / $container-width * 100%;
+        @include breakpoint(tablet) { width: 100%; padding: 0;}
     }     
-    tr:first-child>th {
+    thead>tr>th {
         padding-bottom: 11px;
         padding-left: 21px;
     }    
