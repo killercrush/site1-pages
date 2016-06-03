@@ -15,13 +15,21 @@
 .product__preview-container {
     display: inline-block;
     width: 446px / $container-width-with-pad * 100%;
-    vertical-align: top;    
+    vertical-align: top;
+    @include breakpoint(tablet) {
+        width: 100%;
+    }
 }
 .product__info-container {
     display: inline-block;
     width: ($container-width-with-pad - 446px) / $container-width-with-pad * 100%;
     vertical-align: top;
     padding-left: 25px;
+    @include breakpoint(tablet) {
+        width: 100%;
+        margin-top: 15px;
+        padding-left: 0;
+    }
 }
 .preview__thumb-group {
     margin-top: 10px;
@@ -62,12 +70,19 @@
     width: 395px / ($container-width-with-pad - 446px) * 100%;
     display: inline-block;
     vertical-align: top;
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
 }
 .info-desc__right-block {
     width: ($container-width-with-pad - 446px - 395px) / ($container-width-with-pad - 446px) * 100%;
     padding-left: 69px / ($container-width-with-pad - 446px) * 100%;
     display: inline-block;
     vertical-align: top;
+    @include breakpoint(mobile) {
+        width: 100%;
+        padding-left: 0;
+    }
 }
 .info-desc__product-name {
     color: #f25b5b;
@@ -107,6 +122,13 @@
     height: 41px;
     font-size: 20px;
     vertical-align: top;
+    @include breakpoint(smalldesc) {
+       margin-top: 7px;
+    }
+    @include breakpoint(mobile) {
+        width: 100%;
+        margin-top: 0;        
+    }    
 }
 .button-group__call {
     display: inline-block;
@@ -121,6 +143,13 @@
     text-align: center;
     padding-top: 9px;
     text-decoration: none;
+    @include breakpoint(smalldesc) {
+       margin-top: 7px;
+    }
+    @include breakpoint(mobile) {
+        width: 100%;
+        margin-top: 0;        
+    }     
 }
 .button-group__buy-one-click {
     vertical-align: top;
@@ -132,6 +161,13 @@
     width: 218px;
     height: 41px;
     font-size: 20px;
+    @include breakpoint(smalldesc) {
+       margin-top: 7px;
+    }
+    @include breakpoint(mobile) {
+        width: 100%;
+        margin-top: 0;
+    }
 }
 .info-extra {
     margin-top: 14px;
@@ -146,6 +182,9 @@
     width: 355px / ($container-width-with-pad - 446px) * 100%;
     display: inline-block;
     vertical-align: top;
+    @include breakpoint(mobile) {
+       width: 100%
+    }    
 }
 .info-extra__link {
     color: $main-blue;
@@ -188,6 +227,10 @@
     display: inline-block;
     vertical-align: top;
     width: ($container-width-with-pad - 446px - 355px) / ($container-width-with-pad - 446px) * 100%;
+    @include breakpoint(mobile) {
+        width: 100%;
+        margin-top: 10px;
+    }    
     video, embed, img {
         width: 100%;
     }
@@ -206,11 +249,14 @@
     height: 32px;
     outline: 0;
     padding: 1px 42px;
+    @include breakpoint(tablet) {
+       width: 100%;
+       margin-top: 5px;
+    }     
 }
 .tabs__control--active {
     color: $btn-blue;
     background-color: white;
-
 }
 .tabs__panel {
     color: #7a7a7a;
@@ -225,6 +271,9 @@
     width: 100%;
     max-width: $container-width;
     margin: 0 auto;
+    @include breakpoint(smalldesc) {
+        text-align: center;
+    }
 }
 .rel-product {
     width: 100%;

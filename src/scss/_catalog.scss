@@ -273,6 +273,10 @@
     float: left;
     width: 196px;
     padding-top: 5px;
+    @include breakpoint(mobile) {
+        float: none;
+        width: 100%;
+    }
 }
 .catalog-header__text-container {    
     overflow: hidden;
