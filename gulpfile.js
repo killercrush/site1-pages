@@ -7,11 +7,15 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var spritesmith = require('gulp.spritesmith');
 var imagemin = require('gulp-imagemin');
+var autoprefixer = require('gulp-autoprefixer');
+
+// var info = autoprefixer({ browsers: ['> 2% in RU'] }).info();
+// console.log(info);
 
 gulp.task('sass', function () {
   return gulp.src('./src/scss/main.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(minify({compatibility: 'ie8'}))
+    .pipe(minify({compatibility: 'ie8', mediaMerging: true}))
     .pipe(rename('style.min.css'))
     .pipe(gulp.dest('./dist/css/'));
 });
@@ -20,7 +24,7 @@ gulp.task('sass', function () {
  
 gulp.task('pug', function buildHTML() {
   return gulp.src('./src/pug/*.pug')
-  .pipe( pug() )
+  .pipe( pug( {pretty: false} ) )
   .pipe(gulp.dest('./dist'));
 });
 
@@ -52,3 +56,12 @@ gulp.task('images', function () {
 		.pipe(imagemin())
 		.pipe(gulp.dest('dist/images'))
 });
+
+gulp.task('prefix', () =>
+    gulp.src('./dist/css/style.min.css')
+        .pipe(autoprefixer({
+            browsers: ['last 20 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest('./dist/css/'))
+);

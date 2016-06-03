@@ -249,6 +249,9 @@
     height: 32px;
     outline: 0;
     padding: 1px 42px;
+    @include breakpoint(smalldesc) {
+        padding: 1px 30px;
+    }      
     @include breakpoint(tablet) {
        width: 100%;
        margin-top: 5px;

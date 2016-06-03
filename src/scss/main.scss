@@ -46,7 +46,7 @@ div, footer, header {
     box-sizing: border-box;
 }
 button:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 .bg-girl {
     width: 100%;
@@ -194,15 +194,21 @@ button:hover {
     font-size: 18px;
     margin-top: 2px;
     display: inline-block;
-    @include breakpoint(mobile) {
+    @include breakpoint(smalldesc) {
         font-size: 16px;
     }
+    @include breakpoint(mobile) {
+        font-size: 13px;
+    }    
 }
 .carousel-item__categ {
     color: $grey;
     font-size: 14px;
     margin: 9px 0 13px;
     display: inline-block;
+    @include breakpoint(mobile) {
+        font-size: 13px;
+    }    
 }
 .carousel-item__price {
     color: $main-blue;
@@ -225,6 +231,12 @@ button:hover {
     @include breakpoint(smalldesc) {
         width: 190px / 330px * 100%;
     }
+    @include breakpoint(tablet) {
+        font-size: 14px;
+    }    
+    @include breakpoint(mobile) {
+        font-size: 13px;
+    }
 }
 .carousel-item__to-cart {
     background-color: $btn-green;
@@ -240,26 +252,26 @@ button:hover {
     }
 }
 .carousel-item__sale-badge {
-	@include sprite($icon-sale);
-	position: absolute;
+    @include sprite($icon-sale);
+    position: absolute;
     top: 4px;
     right: 16px;
 }
 .inner-page {
-	width: 100%;
-	background: url(../images/pattern-green.jpg);
-	padding-bottom: 25px;
+    width: 100%;
+    background: url(../images/pattern-green.jpg);
+    padding-bottom: 25px;
 }
 .inner-page__container {
-	width: 100%;
-	max-width: $container-width + 2 * 17px;
-	padding: 24px 17px 0;
-	margin: 0 auto;
-	background-color: white;
+    width: 100%;
+    max-width: $container-width + 2 * 17px;
+    padding: 24px 17px 0;
+    margin: 0 auto;
+    background-color: white;
 }
 .inner-page__title {
-	font-size: 24px;
-	color: #f25b5b;
-	margin: 0 0 13px;
-	text-align: left;
+    font-size: 24px;
+    color: #f25b5b;
+    margin: 0 0 13px;
+    text-align: left;
 }

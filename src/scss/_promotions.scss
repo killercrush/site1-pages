@@ -7,9 +7,28 @@
     display: inline-block;
     vertical-align: top;
     text-align: justify;
+    @include breakpoint(tablet) {
+        width: 267px * 2 / $container-width * 100%;
+        margin-right: ($container-width - (267px * 2) * 2) / 2 / $container-width * 100%;
+    }
+    @include breakpoint(mobile) {
+        width: 100%;
+        margin-right: 0;
+    }    
 }
 .promotion:nth-of-type(4n) {
     margin-right: 0;
+    @include breakpoint(tablet) {
+        margin-right: ($container-width - (267px * 2) * 2) / 2 / $container-width * 100%;
+    }
+    @include breakpoint(mobile) {
+        margin-right: 0;
+    }    
+}
+.promotion:nth-of-type(2n) {
+    @include breakpoint(tablet) {
+        margin-right: 0;
+    }
 }
 .promotion__thumb {
     width: 100%;
