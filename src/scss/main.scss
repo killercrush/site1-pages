@@ -12,6 +12,7 @@
 @import "libs/_owl.carousel";
 @import "libs/_owl.theme";
 @import "libs/_owl.transitions";
+@import "libs/_jquery.modal";
 
 @import "_header";
 
@@ -131,7 +132,7 @@ button:hover {
             margin-top: 12px;
         }
         @include breakpoint(tablet) {
-            margin-top: 7px;
+            margin-top: 8px;
         }    
         @include breakpoint(mobile) {
             margin-top: 4px;
@@ -175,7 +176,7 @@ button:hover {
             margin-top: 12px;
         }
         @include breakpoint(tablet) {
-            margin-top: 7px;
+            margin-top: 8px;
         }    
         @include breakpoint(mobile) {
             margin-top: 4px;
@@ -185,6 +186,7 @@ button:hover {
     .owl-next:hover,
     .owl-prev:hover {
         opacity: 1;
+        cursor: pointer;
     }
 }
 .carousel__name {

@@ -1,60 +1,47 @@
-- var pageTitle = "Интернет магазин детских машин \"Бибика\"";
-- var menuItems = ["Каталог", "Бренды", "О нас", "Статьи", "Наши клиенты", "Доставка и оплата", "Гарантия и возврат", "Акции", "Контакты"];
-- var catalogCars =  ["Электромобили", "Мотоциклы", "Квадрациклы", "Толокары", "Веломобили", "Квадроциклы на бензине", "Детские машины на бензине", "Аккумуляторы, зарядки"];
-- var catalogBabyCars = ["Детские коляски", "Люльки", "2в1", "3в1", "Прогулочные", "Трансформеры", "Трости" , "Для двойни", "Аксессуары"];
-- var catalogChairs = ["Автокресла","Автокресла группы 0+ (0-13кг)","Автокресла группы 0+/1 (0-18кг)","Автокресла группы 1 (9-18кг)","Автокресла группы 1/2 (9-25кг)","Автокресла группы 1/2/3 (9-36кг)","Автокресла группы 2/3 (15-36кг)","Автокресла группы 3 (бустеры)","Аксессуары для автокресел","Аксессуары для автомобиля"];
-- var catalogCycle = ["Беговелы", "Двухколесные", "Трехколесные"];
-doctype html
-html(lang="ru")
-  head
-    meta(charset="utf8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    link(href="css/style.min.css", rel="stylesheet")
-    title= pageTitle
-  body
-    include ./includes/header.pug
-    .owl-carousel.owl-theme#slider
-      .item
-        img(src="images/bg-girl.jpg")
-      .item    
-        img(src="images/bg-girl-2.jpg")
-      .item    
-        img(src="images/bg-girl-3.jpg")  
-    //.bg-girl
-    .divider
-    include ./includes/features.pug
-    mixin carousel(name, color, bg_src, sale_badge)
-      - var className = "carousel__container carousel__container--" + color;
-      div(class=className)
-        h3.carousel__name= name
-        .owl-prev
-        .owl-next  
-        .carousel.owl-carousel.owl-theme
-          mixin carousel_item(img_src, sale_badge)
-            .carousel-item.item
-              img.carousel-item__thumb(src="http://placehold.it/255x255") 
-              span.carousel-item__name Название товара Бренд Модель
-              br
-              span.carousel-item__categ Название группы товаров
-              br
-              span.carousel-item__price Цена:&nbsp;
-              span.carousel-item__price-val 9999 руб.
-              br
-              button.carousel-item__buy Купить в один клик
-              button.carousel-item__to-cart В корзину
-              if ( sale_badge ) 
-                .carousel-item__sale-badge
-          +carousel_item("images/product1.jpg", sale_badge)
-          +carousel_item("images/product1.jpg", sale_badge)
-          +carousel_item("images/product2.jpg", sale_badge)
-          +carousel_item("images/product2.jpg", sale_badge)
-          +carousel_item("images/product3.jpg", sale_badge)
-          +carousel_item("images/product3.jpg", sale_badge)
-    +carousel("Популярное", "blue", "", false)
-    +carousel("Новинки", "green", "", true)
-    +carousel("Скидки", "red", "", true)
+include ./includes/head.pug
+include ./includes/header.pug
+.owl-carousel.owl-theme#slider
+  .item
+    img(src="images/bg-girl.jpg")
+  .item    
+    img(src="images/bg-girl-2.jpg")
+  .item    
+    img(src="images/bg-girl-3.jpg")  
+//.bg-girl
+.divider
+include ./includes/features.pug
+mixin carousel(name, color, bg_src, sale_badge)
+  - var className = "carousel__container carousel__container--" + color;
+  div(class=className)
+    h3.carousel__name= name
+    .owl-prev
+    .owl-next  
+    .carousel.owl-carousel.owl-theme
+      mixin carousel_item(img_src, sale_badge)
+        .carousel-item.item
+          img.carousel-item__thumb(src="http://placehold.it/255x255") 
+          span.carousel-item__name Название товара Бренд Модель
+          br
+          span.carousel-item__categ Название группы товаров
+          br
+          span.carousel-item__price Цена:&nbsp;
+          span.carousel-item__price-val 9999 руб.
+          br
+          button.carousel-item__buy Купить в один клик
+          button.carousel-item__to-cart В корзину
+          if ( sale_badge ) 
+            .carousel-item__sale-badge
+      +carousel_item("images/product1.jpg", sale_badge)
+      +carousel_item("images/product1.jpg", sale_badge)
+      +carousel_item("images/product2.jpg", sale_badge)
+      +carousel_item("images/product2.jpg", sale_badge)
+      +carousel_item("images/product3.jpg", sale_badge)
+      +carousel_item("images/product3.jpg", sale_badge)
++carousel("Популярное", "blue", "", false)
++carousel("Новинки", "green", "", true)
++carousel("Скидки", "red", "", true)
 
 
-    include ./includes/description.pug
-    include ./includes/footer.pug
-    script(src="js/script.min.js")
+include ./includes/description.pug
+include ./includes/footer.pug
+script(src="js/script.min.js")

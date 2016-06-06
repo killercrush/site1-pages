@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.html",
   "dependencies": {
+    "jquery-modal": "^0.7.0",
     "owl.carousel": "^2.1.4"
   },
   "devDependencies": {

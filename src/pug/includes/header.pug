@@ -39,21 +39,19 @@ header.header
           .icon-loupe.header__icon
     .header__block3
       if cart_with_items
-        .header__cart
-          .icon-cart-red.header__icon
-          | В 
-          a.header__cart-link(href="#") корзине 
+        .header__cart-head.header__cart-head--with-items
+          .icon-cart.header__icon
+          | Корзина
+        .header__cart-body
           span.header__cart-count 3 товара
-          br
-          | на сумму
-          |  
+          |  на  
           span.header__cart-price 12 тысяч руб
       else
         .header__cart-head 
           .icon-cart.header__icon
           | Корзина
         .header__cart-body Ваша корзина пуста
-      button.header__callback 
+      button(onclick="$(\"#callback_modal\").modal();").header__callback 
         .icon-callback.header__icon
         | Заказать обратный звонок
   nav.menu-catalog

@@ -30,10 +30,11 @@ gulp.task('pug', function buildHTML() {
 
 gulp.task('owl', function () {
   return gulp.src(['./src/jslib/jquery.js', 
-  	'./src/jslib/owl.carousel.js', 
+  	'./src/jslib/owl.carousel.js',
+    './src/jslib/jquery.modal.js', 
   	'./src/js/carousel-init.js'])
 	.pipe(concat('script.min.js'))
-	.pipe(uglify())
+	// .pipe(uglify())
 	.pipe(gulp.dest('./dist/js'));	
 });
 // gulp.task('sass:watch', function () {

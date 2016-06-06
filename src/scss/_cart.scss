@@ -178,6 +178,24 @@
         width: 264px / (214px + 264px) * 100%;
     }    
 }
+.information__subtitle {
+    color: #a3be32;
+    font-size: 14px;
+}
+.information__input {
+    border: 1px solid $main-blue;
+    color: $grey;
+    height: 32px;
+    width: 55px;
+    display: inline-block;
+    border-radius: 12px;
+    vertical-align: middle;
+    padding-top: 5px;
+    box-sizing: border-box;
+    margin-bottom: 6px;
+    width: 100%;
+    padding-left: 15px;  
+}
 .order {
     width: 462px / $container-width * 100%;
     font-size: 12px;
@@ -228,6 +246,9 @@
     display: inline-block;
     vertical-align: top;
     margin-bottom: 46px;
+    @include breakpoint(smalldesc) {
+        padding-left: 10%;
+    }
     @include breakpoint(tablet) { 
         width: 100%;
         padding-left: 0;

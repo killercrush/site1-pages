@@ -20,7 +20,7 @@ footer.footer
   | 
   mixin list(name, items)
     .footer__column
-      span.footer__list-title= name
+      a(href="#").footer__list-title= name
         | &nbsp;
       ul.footer__list
         each item in items
@@ -32,3 +32,9 @@ footer.footer
   +list("Детские коляски", catalogBabyCars)
   +list("Автокресла", catalogChairs)
   +list("Велосипеды", catalogCycle)
+.modal#callback_modal
+  form.order
+    h4.order__title Заказ обратного звонка
+    input(type="text" placeholder="Имя")
+    input(type="text" placeholder="Номер телефона")
+    input(type="submit" value="Заказать")

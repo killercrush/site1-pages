@@ -64,7 +64,8 @@
     text-decoration: none;
 }
 .footer__list-title {
-    color: $red;    
+    color: $red;
+    text-decoration: none;   
 }
 .footer__list {
     margin: 0;
@@ -78,8 +79,23 @@
     color: $main-blue;
     text-decoration: none;
     font-size: 12px;
+    @include breakpoint(tablet) {
+        font-size: 14px;
+        display: inline-block;
+        min-height: 30px;
+    }    
 }
 .footer__list-link:hover,
-.footer__phone-link:hover {
+.footer__phone-link:hover,
+.footer__list-title:hover {
     text-decoration: underline;
+}
+.modal {
+    margin: 0 auto;
+    display: none;
+    width: 100%;
+    max-width: 500px;
+    .order {
+        width: 100%;
+    }
 }
