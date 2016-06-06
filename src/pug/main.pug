@@ -27,6 +27,8 @@ html(lang="ru")
       - var className = "carousel__container carousel__container--" + color;
       div(class=className)
         h3.carousel__name= name
+        .owl-prev
+        .owl-next  
         .carousel.owl-carousel.owl-theme
           mixin carousel_item(img_src, sale_badge)
             .carousel-item.item

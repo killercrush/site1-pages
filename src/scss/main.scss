@@ -79,57 +79,112 @@ button:hover {
     height: 664px;
     text-align: center;
     padding-top: 57px;
+    position: relative;
 
     .owl-carousel .owl-item {
-        @include breakpoint(smalldesc) {
+        @include breakpoint(laptop) {
             padding: 0 17px;
         }
     }
-    .owl-theme .owl-controls .owl-buttons div {
-        opacity: 1;
-        background-color: white;
-        border-radius: 50%;
+    .owl-theme .owl-controls {
+        @include breakpoint(laptop) {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+        }
     }
     .owl-next {
         position: absolute;
-        right: - 64px - 22px;
+        right: 29px;
         top: 50%;
         color: transparent;
         width: 64px;
-        height: 64px;        
+        height: 64px;
+        border-radius: 50%;
+        background-color: white;        
+        opacity: 0.5;
         
         @include breakpoint(laptop) {
-            position: static;
-            display: inline-block;
+            right: 15px;
+        }
+        @include breakpoint(smalldesc) {
+            width: 56px;
+            height: 56px;
+            right: 10px;
+        }
+        @include breakpoint(tablet) {
+            width: 48px;
+            height: 48px;
+            right: 4px;
+        }    
+        @include breakpoint(mobile) {
+            width: 40px;
+            height: 40px;
+            right: 2px;
         }        
     }
     .owl-next:before {
         content: "";
         display: block;
         margin: 16px auto 0;
+        @include breakpoint(smalldesc) {
+            margin-top: 12px;
+        }
+        @include breakpoint(tablet) {
+            margin-top: 7px;
+        }    
+        @include breakpoint(mobile) {
+            margin-top: 4px;
+        }            
         @include sprite($icon-next);
     }
     .owl-prev {
         position: absolute;
-        left: - 64px - 22px;
+        left: 29px;
         top: 50%;
         color: transparent;
         width: 64px;
         height: 64px;
         border-radius: 50%;
         background-color: white;
+        opacity: 0.5;
         @include breakpoint(laptop) {
-            position: static;
-            display: inline-block;
-            margin-right: 100px;
-            margin-top: 10px;
+             left: 15px;
         }
+        @include breakpoint(smalldesc) {
+            width: 56px;
+            height: 56px;
+            left: 10px;
+        }
+        @include breakpoint(tablet) {
+            width: 48px;
+            height: 48px;
+            left: 4px;
+        }    
+        @include breakpoint(mobile) {
+            width: 40px;
+            height: 40px;
+            left: 2px;
+        } 
     }
     .owl-prev:before {
         content: "";
         display: block;
         margin: 16px auto 0;
+        @include breakpoint(smalldesc) {
+            margin-top: 12px;
+        }
+        @include breakpoint(tablet) {
+            margin-top: 7px;
+        }    
+        @include breakpoint(mobile) {
+            margin-top: 4px;
+        }         
         @include sprite($icon-prev);
+    }
+    .owl-next:hover,
+    .owl-prev:hover {
+        opacity: 1;
     }
 }
 .carousel__name {
@@ -163,6 +218,18 @@ button:hover {
     max-width: $container-width;
     margin: 0 auto;
     margin-top: 74px;
+    @include breakpoint(laptop) {    
+        width: 89%;
+    }
+    @include breakpoint(smalldesc) {
+        width: 87%;
+    }
+    @include breakpoint(tablet) {
+        width: 84.5%;
+    }    
+    @include breakpoint(mobile) {
+        width: 83%;
+    }     
 }
 .carousel-item {
     background-color: white;
@@ -174,9 +241,11 @@ button:hover {
     box-sizing: border-box;
     position: relative;
     margin: 0 auto;
-    @include breakpoint(smalldesc) {
+    @include breakpoint(laptop) {
         width: 100%;
         overflow: hidden;
+        height: auto;
+        padding-bottom: 10px;
         // margin: 0 10px;
     }
     @include breakpoint(mobile) {
@@ -184,6 +253,7 @@ button:hover {
     }
 }
 .carousel-item__thumb {
+    width: 100%;
     max-width: 225px;
     max-height: 225px;
     margin: 0 auto;
@@ -226,9 +296,9 @@ button:hover {
     border: 0;
     border-radius: 12px;
     width: 190px;
-    height: 32px;
+    min-height: 32px;
     box-sizing: border-box;
-    @include breakpoint(smalldesc) {
+    @include breakpoint(laptop) {
         width: 190px / 330px * 100%;
     }
     @include breakpoint(tablet) {
@@ -244,10 +314,10 @@ button:hover {
     border: 0;
     border-radius: 12px;
     width: 127px;
-    height: 32px;
+    min-height: 32px;
     box-sizing: border-box;
     float: right;
-    @include breakpoint(smalldesc) {
+    @include breakpoint(laptop) {
         width: 127px / 330px * 100%;
     }
 }

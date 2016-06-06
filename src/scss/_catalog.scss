@@ -256,6 +256,8 @@
 .catalog__pagination-container {
     text-align: center;
     margin: 16px 0 63px;
+    width: 100%;
+    display: inline-block;
 }
 .catalog:after {
     content: '';

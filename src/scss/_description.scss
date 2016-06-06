@@ -19,4 +19,9 @@
 .description__text {
     font-size: 16px;
     color: $grey;
+    @include breakpoint(tablet) {
+        padding: 0 34px;
+        font-size: 18px;
+        letter-spacing: 5px;
+    }     
 }
