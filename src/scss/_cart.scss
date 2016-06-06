@@ -274,3 +274,24 @@
 .information__text:first-of-type {
     margin-top: 0;
 }
+.reorder {
+    @include breakpoint(tablet) { 
+        display: table;
+    }
+}
+.reorder__above {
+    @include breakpoint(tablet) { 
+        display: table-header-group;
+    }
+}
+.reorder__below {
+    .order__title {
+        @include breakpoint(tablet) {
+            margin: 20px 0 20px;
+        }        
+    }
+    @include breakpoint(tablet) {
+        padding-top: 20px;
+        display: table-footer-group;
+    }
+}

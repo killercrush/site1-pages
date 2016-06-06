@@ -39,25 +39,26 @@ mixin fs_switch(name, type, v1, v2, v3, id)
     .in-total
       span.in-total__text Итого
       span.in-total__val 19 998 руб.
-    form.order
-      h4.order__title Оформить заказ
-      input(type="text" placeholder="ФИО")
-      input(type="email" placeholder="Email")
-      input(type="tel" placeholder="Телефон")
-      textarea(placeholder="Комментарий к заказу")
-      input(type="submit" value="Оформить заказ")
-    .information
-      h4.information__title Информация
-      +fs_switch("Способ доставки", "radio", "Курьером на дом", "Почтой России", "Самовывоз", "sw5")
-      +fs_switch("Способ оплаты", "radio", "Наличными, при получении заказа", "Банковские карты", "Яндекс.Деньги", "sw6")
-      h5.information__subtitle Адрес доставки
-      input(type="text" placeholder="Город").information__input
-      input(type="text" placeholder="Улица").information__input
-      input(type="text" placeholder="Дом").information__input
-      input(type="text" placeholder="Квартира").information__input
-      a(href="#").information__link
-        .icon-medal-red
-        | Гарантия
-      a(href="#").information__link
-        .icon-box-red
-        | Доставка и оплата
+    .reorder
+      form.order.reorder__below
+        h4.order__title Оформить заказ
+        input(type="text" placeholder="ФИО")
+        input(type="email" placeholder="Email")
+        input(type="tel" placeholder="Телефон")
+        textarea(placeholder="Комментарий к заказу")
+        input(type="submit" value="Оформить заказ")
+      .information.reorder__above
+        h4.information__title Информация
+        +fs_switch("Способ доставки", "radio", "Курьером на дом", "Почтой России", "Самовывоз", "sw5")
+        +fs_switch("Способ оплаты", "radio", "Наличными, при получении заказа", "Банковские карты", "Яндекс.Деньги", "sw6")
+        h5.information__subtitle Адрес доставки
+        input(type="text" placeholder="Город").information__input
+        input(type="text" placeholder="Улица").information__input
+        input(type="text" placeholder="Дом").information__input
+        input(type="text" placeholder="Квартира").information__input
+        a(href="#").information__link
+          .icon-medal-red
+          | Гарантия
+        a(href="#").information__link
+          .icon-box-red
+          | Доставка и оплата
