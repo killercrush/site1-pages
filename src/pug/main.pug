@@ -10,9 +10,9 @@ include ./includes/header.pug
 //.bg-girl
 .divider
 include ./includes/features.pug
-mixin carousel(name, color, bg_src, sale_badge)
+mixin carousel(name, color, bg_src, sale_badge, id)
   - var className = "carousel__container carousel__container--" + color;
-  div(class=className)
+  div(class=className id=id)
     h3.carousel__name= name
     .owl-prev
     .owl-next  
@@ -37,9 +37,9 @@ mixin carousel(name, color, bg_src, sale_badge)
       +carousel_item("images/product2.jpg", sale_badge)
       +carousel_item("images/product3.jpg", sale_badge)
       +carousel_item("images/product3.jpg", sale_badge)
-+carousel("Популярное", "blue", "", false)
-+carousel("Новинки", "green", "", true)
-+carousel("Скидки", "red", "", true)
++carousel("Популярное", "blue", "", false, "c1")
++carousel("Новинки", "green", "", true, "c2")
++carousel("Скидки", "red", "", true, "c3")
 
 
 include ./includes/description.pug

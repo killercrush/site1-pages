@@ -57,6 +57,31 @@
         button.tabs__control(onclick="changeTab.bind(this, \"tab4\")();") О бренде
         mixin panel(id, vis)
           - var style = vis ? "display: block" : "display: none";
+          if (id == "tab2")
+            div(style=style id=id class="tabs__panel tabs__panel--bigger-padding")
+              table.characteristics
+                mixin ch_row()
+                  tr
+                    td.characteristics__name Параметр
+                    td.characteristics__value Значение
+                +ch_row()
+                +ch_row()
+                +ch_row()
+                +ch_row()
+                +ch_row()
+                +ch_row()
+          else if (id == "tab3")
+            div(style=style id=id class="tabs__panel tabs__panel--bigger-padding")
+              mixin comment()
+                .comment
+                  span.comment__who Имя Фамилия
+                  br
+                  span.comment__date 01.01.2016
+                  p.comment__text.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. 
+              +comment()
+              +comment()
+          else
             div(style=style id=id).tabs__panel
               p.
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 

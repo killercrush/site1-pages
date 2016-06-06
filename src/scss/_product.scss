@@ -269,6 +269,41 @@
     margin-top: 13px;
     padding: 13px 7px 55px;
 }
+.tabs__panel--bigger-padding {
+    padding: 25px 15px 55px;
+}
+.characteristics {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+.characteristics__name {
+    width: 285px / (285px + 652px) * 100%;
+    border: 1px solid $grey;
+    height: 30px;
+}
+.characteristics__value {
+    width: 652px / (285px + 652px) * 100%;
+    border: 1px solid $grey;
+    height: 30px;
+}
+.comment {
+    padding: 10px 30px;
+    border: 1px solid $main-blue;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+.comment__who {
+    color: $main-blue;
+    font-size: 16px;
+}
+.comment__date {
+    color: $btn-green;
+    font-size: 14px;
+}
+.comment__text {
+    
+}
 .rel-product__container {
     text-align: justify;
     width: 100%;

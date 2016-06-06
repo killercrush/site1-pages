@@ -58,10 +58,11 @@ header.header
     .menu-catalog__container
       mixin item(name, icon, items, is_sel)
         - var className = is_sel ? "menu-catalog__item menu-catalog__item--selected" : "menu-catalog__item";
+        - if (name == "Велосипеды") name = "<span class=\"fontfix\">В</span>елосипеды";
         div(class=className onclick="dropDown.bind(this)();")
           != icon
           | &nbsp;
-          = name
+          != name
           ul.menu-catalog__dropdown-container
             each item in items
               li.menu-catalog__dropdown-item

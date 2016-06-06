@@ -18,6 +18,15 @@ $(document).ready(function() {
       itemsTablet: false, 
       itemsMobile: [650, 1]
   });
+var owl1 = $("#c1 .carousel").data('owlCarousel');
+$("#c1 .owl-next").click(function() { owl1.next(); } );
+$("#c1 .owl-prev").click(function() { owl1.prev(); } );
+var owl2 = $("#c2 .carousel").data('owlCarousel');
+$("#c2 .owl-next").click(function() { owl2.next(); } );
+$("#c2 .owl-prev").click(function() { owl2.prev(); } ); 
+var owl3 = $("#c3 .carousel").data('owlCarousel');
+$("#c3 .owl-next").click(function() { owl3.next(); } );
+$("#c3 .owl-prev").click(function() { owl3.prev(); } ); 
 });
 function changeColor(id) {
   $("#item_"+id+" .color-selector__thumb--selected").removeClass("color-selector__thumb--selected");
