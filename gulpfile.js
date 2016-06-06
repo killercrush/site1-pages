@@ -66,3 +66,8 @@ gulp.task('prefix', () =>
         }))
         .pipe(gulp.dest('./dist/css/'))
 );
+
+gulp.task('fonts', () =>
+    gulp.src('./src/fonts/**/*.ttf')
+        .pipe(gulp.dest('./dist/fonts/'))
+);
